@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="An independent interactive study of form, light, and the space between. Inspired by NIRNOR.">
+  <title>Form / feeling — A NIRNOR-inspired study</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a0a0a'/%3E%3Ctext x='7' y='25' font-family='Arial' font-size='28' fill='%23dcf99a'%3En%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Pinned HTTPS versions keep the standalone example reproducible.
+       If upgraded, update BOTH Three.js URLs to the same release. -->
+  <script type="importmap">
+    { "imports": { "three": "https://unpkg.com/three@0.170.0/build/three.module.js" } }
+  </script>
+</head>
+<body>
+  <canvas id="webgl" aria-hidden="true"></canvas>
+  <div class="fallback" id="fallback" aria-hidden="true"></div>
+  <div class="grid" aria-hidden="true"></div>
+
+  <div class="page">
+    <header class="header">
+      <a class="brand" href="#main" aria-label="Form and feeling — home">
+        <span class="wordmark">nirnor<span class="footer-mark">.</span></span>
+        <span class="brand-note">Independent<br>visual study</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="text-button" id="about-open" aria-haspopup="dialog">The idea</button>
+        <a href="https://nirnor.jp/" target="_blank" rel="noopener noreferrer">The inspiration<span class="external-arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </nav>
+    </header>
+
+    <main class="hero" id="main">
+      <div class="hero-top">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Form / Feeling</p>
+        <p class="edition micro">An interactive study — 01</p>
+      </div>
+      <p class="status" id="status" role="status">Preparing the form…</p>
+      <div class="hero-copy">
+        <p class="hero-kicker" lang="ja">かたちの、その先へ。</p>
+        <h1><span>Shaping</span><span class="second-line">the <em>unseen.</em></span></h1>
+        <p class="hero-caption">A conversation between<br>form, light &amp; possibility.</p>
+      </div>
+      <span class="cross" aria-hidden="true">+</span>
+      <p class="object-note micro"><strong id="material-caption">01 / Dark chrome</strong>Move your pointer to explore</p>
+    </main>
+
+    <section class="bottom" aria-label="Explore the sculpture">
+      <div class="bottom-intro">
+        <p class="description">A little movement.<br>A different way of seeing.</p>
+        <button class="cta" id="perspective" disabled>Change perspective<span class="cta-arrow" aria-hidden="true">↗</span></button>
+      </div>
+      <div class="controls">
+        <div class="material-switch" role="group" aria-label="Sculpture material">
+          <button data-material="chrome" aria-pressed="true" disabled>Chrome</button>
+          <button data-material="glass" aria-pressed="false" disabled>Glass</button>
+        </div>
+        <button class="motion-button" id="motion" aria-pressed="false" aria-label="Pause animation" disabled><span class="motion-icon" aria-hidden="true">Ⅱ</span><span id="motion-label">Pause</span></button>
+      </div>
+    </section>
+
+    <div class="explore-bar">
+      <p class="micro">There is more to feel.</p>
+      <a class="micro" href="#particles">Explore the experiments <span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+
+  <div class="experiments">
+    <section class="experiment" id="particles" aria-labelledby="particles-title" data-demo="particles">
+      <div class="experiment-heading">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> 02 / Particle field</p>
+        <a class="micro experiment-next" href="#terrain">Next experiment <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="experiment-layout">
+        <div class="experiment-copy">
+          <p class="experiment-category micro">Order meets chance</p>
+          <h2 id="particles-title">A little<br><em>chaos.</em></h2>
+          <p class="experiment-description">Thousands of points.<br>One shared rhythm.</p>
+          <p class="experiment-instruction">Move through the field, gather it into an orb, or send a pulse and watch it breathe.</p>
+          <div class="experiment-detail micro"><span aria-hidden="true">↗</span> Move to disturb. Tap to pulse.</div>
+        </div>
+        <div class="demo-panel">
+          <div class="demo-stage" aria-label="Interactive particle field">
+            <canvas id="particles-canvas" aria-hidden="true"></canvas>
+            <div class="demo-placeholder" aria-hidden="true"></div>
+            <div class="demo-stage-label micro" aria-hidden="true"><span data-demo-caption>Nebula / Open field</span><span>F—02</span></div>
+            <p class="demo-status" role="status">The particle field will appear here.</p>
+            <span class="demo-corner demo-corner--top" aria-hidden="true">+</span>
+            <span class="demo-corner demo-corner--bottom" aria-hidden="true">+</span>
+          </div>
+          <div class="demo-toolbar">
+            <div class="material-switch" role="group" aria-label="Particle formation">
+              <button data-formation="nebula" aria-pressed="true" disabled>Nebula</button>
+              <button data-formation="orb" aria-pressed="false" disabled>Orb</button>
+            </div>
+            <button class="demo-action" data-pulse disabled>Send a pulse <span aria-hidden="true">↗</span></button>
+            <button class="demo-pause micro" aria-pressed="false" disabled>Pause animation</button>
+          </div>
+        </div>
+      </div>
+      <div class="experiment-footnote micro"><span>Small gestures. Unexpected patterns.</span><span>Form / 02</span></div>
+    </section>
+
+    <section class="experiment experiment--terrain" id="terrain" aria-labelledby="terrain-title" data-demo="terrain">
+      <div class="experiment-heading">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> 03 / Living terrain</p>
+        <a class="micro experiment-next" href="#main">Back to the beginning <span aria-hidden="true">↑</span></a>
+      </div>
+      <div class="experiment-layout">
+        <div class="experiment-copy">
+          <p class="experiment-category micro">Nothing stays still</p>
+          <h2 id="terrain-title">Find your<br><em>flow.</em></h2>
+          <p class="experiment-description">A landscape with<br>a life of its own.</p>
+          <p class="experiment-instruction">Raise the waves, reveal the underlying lines, or touch the surface to leave a ripple.</p>
+          <div class="experiment-detail micro"><span aria-hidden="true">↗</span> Tap the landscape to make waves.</div>
+        </div>
+        <div class="demo-panel">
+          <div class="demo-stage" aria-label="Interactive wave terrain">
+            <canvas id="terrain-canvas" aria-hidden="true"></canvas>
+            <div class="demo-placeholder" aria-hidden="true"></div>
+            <div class="demo-stage-label micro" aria-hidden="true"><span data-demo-caption>Surface / Contour study</span><span>F—03</span></div>
+            <p class="demo-status" role="status">The living terrain will appear here.</p>
+            <span class="demo-corner demo-corner--top" aria-hidden="true">+</span>
+            <span class="demo-corner demo-corner--bottom" aria-hidden="true">+</span>
+          </div>
+          <div class="demo-toolbar">
+            <div class="material-switch" role="group" aria-label="Terrain appearance">
+              <button data-surface="solid" aria-pressed="true" disabled>Surface</button>
+              <button data-surface="wireframe" aria-pressed="false" disabled>Wireframe</button>
+            </div>
+            <div class="demo-range">
+              <label class="micro" for="wave-height">Wave height <output id="wave-value" for="wave-height">55%</output></label>
+              <input id="wave-height" type="range" min="0" max="100" value="55" disabled>
+            </div>
+            <button class="demo-action" data-ripple disabled>Make a ripple <span aria-hidden="true">↗</span></button>
+            <button class="demo-pause micro" aria-pressed="false" disabled>Pause animation</button>
+          </div>
+        </div>
+      </div>
+      <div class="experiment-footnote micro"><span>Every touch leaves a trace.</span><span>Form / 03</span></div>
+    </section>
+    <footer class="footer site-footer">
+      <p class="micro">NIRNOR-inspired <span class="footer-mark">/</span> Independent concept</p>
+      <p class="micro footer-detail">An exploration of form &amp; interaction</p>
+      <span class="micro" aria-hidden="true">[ n / f ]</span>
+    </footer>
+  </div>
+
+  <dialog id="about" aria-labelledby="about-title">
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Behind the form</p>
+    <h2 id="about-title">Less noise.<br>More feeling.</h2>
+    <p>A study in contrast: expressive typography, quiet space, and a sculptural form that responds to you.</p>
+    <p>Move your pointer to turn the form, switch between chrome and glass, or change perspective to see it in a new light.</p>
+    <p>This independent concept is inspired by <a href="https://nirnor.jp/" target="_blank" rel="noopener noreferrer">NIRNOR<span class="sr-only"> (opens in a new tab)</span></a>. It is not the official NIRNOR website.</p>
+    <form method="dialog"><button class="cta" autofocus>Back to the form<span aria-hidden="true">↗</span></button></form>
+  </dialog>
+  <noscript><p class="status">Enable JavaScript to explore the interactive sculpture.</p></noscript>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/demos.js"></script>
+</body>
+</html>
