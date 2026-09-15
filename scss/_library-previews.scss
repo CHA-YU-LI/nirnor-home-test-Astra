@@ -1,0 +1,40 @@
+@use 'tokens' as t;
+
+.lib-grid {
+  --preview-ink: #{t.$ink};
+  --preview-muted: #{t.$muted};
+  --preview-accent: #{t.$accent};
+  --preview-bg: #{t.$color-card-bg};
+  --preview-surface: #{t.$color-preview-bg};
+  --preview-line: #{t.$line};
+}
+
+.lib-preview-tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: t.$space-3;
+  margin-bottom: t.$space-5;
+
+  p {margin: 0; color: t.$muted; font-size: t.$font-size-body;}
+}
+
+.lib-card .lib-preview {
+  aspect-ratio: auto;
+  .lib-preview-canvas {display: block; width: 100%; height: auto; aspect-ratio: 1.6;}
+  img {display: block; height: auto; aspect-ratio: 1.6;}
+  &.has-animation img {display: none;}
+  span.lib-preview-id {top: t.$space-3; left: t.$space-3; padding: 0; background: transparent;}
+  span.lib-preview-caption {
+    position: static;
+    display: block;
+    min-height: t.$space-16;
+    padding: t.$space-3 t.$space-14 t.$space-3 t.$space-3;
+    background: transparent;
+    color: t.$ink;
+    font-family: t.$font-sans;
+    font-size: t.$font-size-body;
+    line-height: t.$line-height-heading;
+  }
+}

@@ -1,4 +1,62 @@
 @charset "UTF-8";
+.lib-grid {
+  --preview-ink: #f0efe9;
+  --preview-muted: #a1a79a;
+  --preview-accent: #dcf99a;
+  --preview-bg: #0e100d;
+  --preview-surface: #1d211a;
+  --preview-line: rgba(255, 255, 255, 0.1254901961);
+}
+
+.lib-preview-tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.lib-preview-tools p {
+  margin: 0;
+  color: #a1a79a;
+  font-size: 16px;
+}
+
+.lib-card .lib-preview {
+  aspect-ratio: auto;
+}
+.lib-card .lib-preview .lib-preview-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.6;
+}
+.lib-card .lib-preview img {
+  display: block;
+  height: auto;
+  aspect-ratio: 1.6;
+}
+.lib-card .lib-preview.has-animation img {
+  display: none;
+}
+.lib-card .lib-preview span.lib-preview-id {
+  top: 12px;
+  left: 12px;
+  padding: 0;
+  background: transparent;
+}
+.lib-card .lib-preview span.lib-preview-caption {
+  position: static;
+  display: block;
+  min-height: 64px;
+  padding: 12px 56px 12px 12px;
+  background: transparent;
+  color: #f0efe9;
+  font-family: Arial, "Microsoft JhengHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
 * {
   box-sizing: border-box;
 }

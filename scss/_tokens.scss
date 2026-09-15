@@ -20,3 +20,14 @@ $mobile: 700px;
   .fx-caption { font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
   .fx-render-status { position:absolute; bottom:18px; left:22px; font:10px monospace; pointer-events:none; z-index:3; }
 }
+
+// Shared tokens required by animated library previews.
+$color-card-bg: #0e100d;
+$color-preview-bg: #1d211a;
+$space-3: 12px;
+$space-5: 20px;
+$font-size-body: 16px;
+$space-16: 64px;
+$space-14: 56px;
+$font-sans: Arial, "Microsoft JhengHei", sans-serif;
+$line-height-heading: 1.3;
