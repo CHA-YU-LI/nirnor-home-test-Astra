@@ -36,9 +36,9 @@
 .fx-pixel-stretch .fx-action {
   border: 1px solid rgba(26, 26, 26, 0.3137254902);
   background: rgba(246, 246, 239, 0.8666666667);
-  padding: 8px 14px;
+  padding: 8px 12px;
   color: #20251b;
-  font-size: 12px;
+  font-size: 16px;
   min-height: 40px;
   cursor: pointer;
 }
@@ -49,15 +49,16 @@
   z-index: 5;
 }
 .fx-pixel-stretch .fx-caption {
-  font-size: 11px;
+  font-size: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 .fx-pixel-stretch .fx-render-status {
   position: absolute;
-  bottom: 18px;
-  left: 22px;
-  font: 10px monospace;
+  bottom: 20px;
+  left: 24px;
+  font-size: 16px;
+  font-family: monospace;
   pointer-events: none;
   z-index: 3;
 }
