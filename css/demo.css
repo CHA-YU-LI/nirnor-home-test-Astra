@@ -720,6 +720,20 @@ td {
   margin: 0 0 20px;
 }
 
+.demo-info ol {
+  margin: 0 0 20px;
+  padding-left: 32px;
+}
+
+.demo-info ol li {
+  padding-left: 8px;
+  margin-bottom: 12px;
+}
+
+.demo-info ol li:last-child {
+  margin-bottom: 0;
+}
+
 .demo-info a {
   color: #dcf99a;
   text-decoration: underline;
