@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="認識動態實驗室：從首頁體驗互動，到特效庫調整參數、查看程式碼，再透過觀察紀錄了解來源與驗證狀態。">
+  <title>關於本站 — 動態實驗室</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/library.css">
+  <link rel="stylesheet" href="css/about.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/site.css"></head>
+<body>
+<!-- site-header:start -->
+<header class="site-header" data-site-header>
+  <div class="site-header__inner">
+    <a class="site-brand" href="index.html" aria-label="動態實驗室 — 首頁">動態實驗室</a>
+    <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="展開選單" hidden><span></span><span></span></button>
+    <nav class="site-navigation" id="site-navigation" aria-label="主要導覽">
+      <a href="index.html" >首頁</a>
+      <a href="library.html" >特效庫</a>
+      <a href="audit.html" >觀察紀錄</a>
+      <a href="about.html" aria-current="page">關於本站</a>
+    </nav>
+  </div>
+</header>
+<!-- site-header:end -->
+<main class="about-page">
+    <section class="about-intro" aria-labelledby="about-title">
+      <p class="about-eyebrow">ABOUT / 關於動態實驗室</p>
+      <h1 id="about-title">先感受動態，<br><em>再看懂細節。</em></h1>
+      <div class="about-intro__body">
+        <p>歡迎來到動態實驗室。這裡收集可以親手操作的網頁動畫與互動效果，讓你從畫面的變化，探索背後的製作方式。</p>
+        <p>不熟悉程式也可以先玩玩看；想把效果用在自己的專案時，再查看參數、技術說明與可複製的程式碼。</p>
+        <div class="about-actions"><a class="lib-button lib-button--accent" href="index.html">從首頁開始體驗</a><a class="lib-button" href="library.html">直接前往特效庫</a></div>
+      </div>
+    </section>
+
+    <section class="about-section" aria-labelledby="pages-title">
+      <div class="about-section__heading"><p class="about-eyebrow">01 / 網站地圖</p><h2 id="pages-title">每一頁，都有不同的探索方式。</h2></div>
+      <div class="about-pages">
+        <article class="about-card"><p class="about-eyebrow">體驗</p><h3>首頁</h3><p>從 3D 形體、粒子與流動地景開始。依照提示移動游標、點擊按鈕或切換參數，觀察形體與光影的變化。</p><p>這些是獨立概念創作，帶你感受互動的可能性。</p><a href="index.html">前往首頁</a></article>
+        <article class="about-card"><p class="about-eyebrow">操作與使用</p><h3>特效庫</h3><p>目前收錄 14 個獨立效果與 2 個組合展示。可以依關鍵字、分類、套件或 API 篩選，找到想探索的動態。</p><p>點進卡片後，就能操作 demo、調整參數，查看使用範例與移植所需的檔案。</p><a href="library.html">探索特效庫</a></article>
+        <article class="about-card"><p class="about-eyebrow">來源與查證</p><h3>觀察紀錄</h3><p>對照效果來自原站的哪個頁面、區塊，以及如何觸發；查看公開技術證據、重現方式和已知差異。</p><p>實作完成與驗證通過分別記錄，也會標示仍待確認的範圍。</p><a href="audit.html">查看觀察紀錄</a></article>
+      </div>
+    </section>
+
+    <section class="about-section" aria-labelledby="start-title">
+      <div class="about-section__heading"><p class="about-eyebrow">02 / 第一次使用</p><h2 id="start-title">從好奇，到親手試試。</h2></div>
+      <ol class="about-steps">
+        <li><h3>先體驗畫面</h3><p>到首頁試著移動、點擊與切換材質。手機可以依提示使用觸控和按鈕操作。</p></li>
+        <li><h3>挑一個感興趣的效果</h3><p>進入特效庫搜尋或篩選，再點選卡片開啟獨立 demo。組合展示則讓你觀察多個效果如何一起運作。</p></li>
+        <li><h3>調整參數，觀察差別</h3><p>依效果調整速度、時間或強度。「重播」重新播放效果，「重設」恢復預設參數；捲動型效果請在展示區內往下捲，再反向試試。</p></li>
+        <li><h3>看懂原理，帶進自己的專案</h3><p>往下閱讀實際使用的套件、版本與 API，再複製使用範例。依照依賴清單準備必要檔案，透過本機 HTTP 伺服器預覽。</p></li>
+      </ol>
+      <p class="about-tip">上方導覽會固定在畫面頂端，隨時都能切換頁面。手機請點選右上角選單；網站也提供減少動態的對應行為，細節可在各 demo 的技術說明中查看。</p>
+    </section>
+
+    <section class="about-section about-origin" aria-labelledby="origin-title">
+      <div><p class="about-eyebrow">03 / 創作理念與來源</p><h2 id="origin-title">讓細微的動作，<br>成為可以理解的設計。</h2></div>
+      <div><p>動態實驗室從形體、光影、文字與留白出發，觀察一個小小的動作如何改變畫面的感受，再將它整理成可以操作與調整的實驗。</p><p>特效研究以 <a href="https://nirnor.jp/" target="_blank" rel="noopener noreferrer">NIRNOR<span class="site-sr-only">（在新分頁開啟）</span></a> 的公開網站為靈感來源，採用自製文字、幾何圖形與替代素材。本站是獨立研究，並非 NIRNOR 官方網站。</p><p>重現效果與原站之間仍有差異；目前各效果的完整瀏覽器互動驗證仍待完成。「已實作」不代表「已通過全部驗證」，請以各 demo 與觀察紀錄的狀態為準。</p><a class="lib-button" href="audit.html">了解來源與驗證進度</a></div>
+    </section>
+  </main>
+<!-- site-footer:start -->
+<footer class="site-footer-shared">
+  <div class="site-footer-shared__inner">
+    <p>動態實驗室 <span>— 獨立動態研究</span></p>
+    <nav aria-label="頁尾導覽">
+      <a href="about.html">關於本站</a>
+      <a href="library.html">探索特效庫</a>
+      <a href="https://nirnor.jp/" target="_blank" rel="noopener noreferrer">靈感來源<span class="site-sr-only">（在新分頁開啟）</span></a>
+    </nav>
+  </div>
+</footer>
+<!-- site-footer:end -->
+<script type="module" src="js/site.js"></script>
+</body>
+</html>

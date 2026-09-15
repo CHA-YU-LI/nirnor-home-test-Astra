@@ -1,0 +1,6 @@
+@use '../../scss/tokens' as t;
+.fx-page-transition{@include t.effect;height:var(--effect-height,640px);overflow:auto;background:#f7f7f2;color:#242821;[data-page-view]{height:100%;min-height:500px;padding:60px 8%;display:flex;flex-direction:column;align-items:flex-start;position:relative;overflow:hidden;} .fx-page-b{background:#29362d;color:#e2edc8;}h2{font:italic clamp(64px,9vw,115px)/1.1 Georgia,serif;font-weight:400;margin:70px 0 30px;position:relative;z-index:1;}p{max-width:390px;font-size:13px;position:relative;z-index:1;}a{position:relative;z-index:1;display:inline-block;margin-top:30px;color:inherit;padding:8px 0;border-bottom:1px solid;min-height:44px;text-decoration:none;} .fx-page-orb{position:absolute;right:-70px;top:70px;width:300px;height:300px;border:40px solid #cadbad;border-radius:50%;opacity:.5;}.fx-page-b .fx-page-orb{border-radius:0;transform:rotate(30deg);}.fx-route-status{position:absolute;bottom:18px;left:8%;font-size:10px;z-index:2;}
+}
+::view-transition-old(root){animation:fx-route-out var(--route-duration,100ms) ease-in-out both;}
+::view-transition-new(root){animation:fx-route-in var(--route-duration,100ms) ease-in-out var(--route-duration,100ms) both;}
+@keyframes fx-route-out{to{opacity:0}}@keyframes fx-route-in{from{opacity:0}}

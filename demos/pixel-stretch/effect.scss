@@ -1,0 +1,2 @@
+@use '../../scss/tokens' as t;
+.fx-pixel-stretch{@include t.effect;height:var(--effect-height,640px);min-height:160px;background:#203a3a;overflow:hidden;canvas{display:block;width:100%;height:100%;} .fx-stretch-label{position:absolute;top:26px;left:30px;font:11px monospace;letter-spacing:.1em;color:#fff;background:#1a1a1a70;padding:6px 9px;pointer-events:none;} }

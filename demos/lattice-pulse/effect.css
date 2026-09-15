@@ -1,0 +1,90 @@
+.fx-lattice-pulse {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-width: 0;
+  font-family: Arial, "Microsoft JhengHei", sans-serif;
+  line-height: 1.6;
+}
+.fx-lattice-pulse, .fx-lattice-pulse * {
+  box-sizing: border-box;
+}
+.fx-lattice-pulse button, .fx-lattice-pulse input, .fx-lattice-pulse select, .fx-lattice-pulse textarea {
+  font: inherit;
+}
+.fx-lattice-pulse button, .fx-lattice-pulse a {
+  -webkit-tap-highlight-color: transparent;
+}
+.fx-lattice-pulse button {
+  cursor: pointer;
+}
+.fx-lattice-pulse :focus-visible {
+  outline: 2px solid #6c8138;
+  outline-offset: 4px;
+}
+.fx-lattice-pulse [hidden] {
+  display: none !important;
+}
+.fx-lattice-pulse .fx-scroller {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #929984 #f7f7f2;
+}
+.fx-lattice-pulse .fx-action {
+  border: 1px solid rgba(26, 26, 26, 0.3137254902);
+  background: rgba(246, 246, 239, 0.8666666667);
+  padding: 8px 14px;
+  color: #20251b;
+  font-size: 12px;
+  min-height: 40px;
+  cursor: pointer;
+}
+.fx-lattice-pulse .fx-top-action {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 5;
+}
+.fx-lattice-pulse .fx-caption {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.fx-lattice-pulse .fx-render-status {
+  position: absolute;
+  bottom: 18px;
+  left: 22px;
+  font: 10px monospace;
+  pointer-events: none;
+  z-index: 3;
+}
+.fx-lattice-pulse {
+  height: var(--effect-height, 640px);
+  background: #3c3c3c;
+  color: #eee;
+  overflow: hidden;
+}
+.fx-lattice-pulse canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.fx-lattice-pulse h2 {
+  position: absolute;
+  top: 70px;
+  left: 8%;
+  margin: 0;
+  font: 26px/1.8 Georgia, serif;
+  writing-mode: vertical-rl;
+  max-height: 450px;
+  pointer-events: none;
+}
+.fx-lattice-pulse .fx-action {
+  background: rgba(60, 60, 60, 0.7333333333);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.4);
+}

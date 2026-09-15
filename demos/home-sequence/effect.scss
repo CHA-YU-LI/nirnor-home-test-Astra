@@ -1,0 +1,8 @@
+@use '../../scss/tokens' as t;
+@use '../chaos-attractor/effect' as field;
+@use '../orbit-cubes/effect' as cubes;
+@use '../unfold-cube/effect' as unfold;
+.fx-home-sequence{@include t.effect;height:var(--effect-height,640px);overflow:hidden;color:#242821;background:#fafaf7;
+ [data-combo-field]{position:absolute;inset:0;pointer-events:none;background:transparent;}.fx-combo-scroller{position:relative;z-index:1;}.fx-combo-header{position:sticky;top:0;padding:20px 6%;font:12px monospace;text-align:right;height:60px;margin-bottom:-60px;pointer-events:none;z-index:4;}.fx-combo-part{position:relative;min-height:640px;height:100%;padding:80px 7%;display:flex;flex-direction:column;justify-content:flex-end;background:transparent;}.fx-combo-part h2{font:italic clamp(48px,6vw,85px)/1.1 Georgia,serif;font-weight:400;margin:0 0 25px;}.fx-combo-part p{font-size:13px;max-width:300px;}.fx-combo-logo{font:bold 42px Georgia,serif;margin-bottom:28px;}[data-combo-cubes]{min-height:550px;height:100%;background:transparent;}[data-combo-category]{height:820px;padding:50px 7%;}.fx-combo-category h2{font:normal 36px Georgia,serif;}[data-combo-unfold]{height:500px;min-height:500px;}.fx-net-anchor{margin-top:0;}[data-combo-about]{height:730px;min-height:730px;justify-content:center;border-top:1px dashed #87957755;}[data-render-status]{bottom:10px;font-size:9px;}
+ @media(max-width:700px){.fx-combo-part{min-height:580px;}[data-combo-category]{height:720px;padding-top:40px;}[data-combo-unfold]{height:450px;min-height:450px;}}
+}

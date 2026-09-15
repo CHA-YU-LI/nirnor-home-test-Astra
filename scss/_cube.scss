@@ -1,0 +1,4 @@
+@mixin structure {
+  .fx-face { position:absolute; inset:0; width:var(--size); height:var(--size); background-size:cover; background-position:center; backface-visibility:visible; outline:1px solid #ffffff12; }
+  .fx-cube { position:relative; width:var(--size);height:var(--size);--half:calc(var(--size) / 2);transform-style:preserve-3d; }
+}

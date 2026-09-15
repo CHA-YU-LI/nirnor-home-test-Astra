@@ -1,0 +1,22 @@
+$bg: #0a0a0a;
+$surface: #151713;
+$ink: #f0efe9;
+$muted: #a1a79a;
+$accent: #dcf99a;
+$line: #ffffff20;
+$mobile: 700px;
+@mixin effect {
+  position: relative; isolation: isolate; width: 100%; min-width: 0;
+  font-family: Arial, "Microsoft JhengHei", sans-serif; line-height: 1.6;
+  &, * { box-sizing: border-box; }
+  button, input, select, textarea { font: inherit; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  button { cursor: pointer; }
+  :focus-visible { outline: 2px solid #6c8138; outline-offset: 4px; }
+  [hidden] { display: none !important; }
+  .fx-scroller { position:relative; height:100%; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#929984 #f7f7f2; }
+  .fx-action { border:1px solid #1a1a1a50; background:#f6f6efdd; padding:8px 14px; color:#20251b; font-size:12px; min-height:40px; cursor:pointer; }
+  .fx-top-action { position:absolute; right:20px; top:20px; z-index:5; }
+  .fx-caption { font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+  .fx-render-status { position:absolute; bottom:18px; left:22px; font:10px monospace; pointer-events:none; z-index:3; }
+}

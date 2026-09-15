@@ -1,0 +1,85 @@
+.fx-pixel-stretch {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-width: 0;
+  font-family: Arial, "Microsoft JhengHei", sans-serif;
+  line-height: 1.6;
+}
+.fx-pixel-stretch, .fx-pixel-stretch * {
+  box-sizing: border-box;
+}
+.fx-pixel-stretch button, .fx-pixel-stretch input, .fx-pixel-stretch select, .fx-pixel-stretch textarea {
+  font: inherit;
+}
+.fx-pixel-stretch button, .fx-pixel-stretch a {
+  -webkit-tap-highlight-color: transparent;
+}
+.fx-pixel-stretch button {
+  cursor: pointer;
+}
+.fx-pixel-stretch :focus-visible {
+  outline: 2px solid #6c8138;
+  outline-offset: 4px;
+}
+.fx-pixel-stretch [hidden] {
+  display: none !important;
+}
+.fx-pixel-stretch .fx-scroller {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #929984 #f7f7f2;
+}
+.fx-pixel-stretch .fx-action {
+  border: 1px solid rgba(26, 26, 26, 0.3137254902);
+  background: rgba(246, 246, 239, 0.8666666667);
+  padding: 8px 14px;
+  color: #20251b;
+  font-size: 12px;
+  min-height: 40px;
+  cursor: pointer;
+}
+.fx-pixel-stretch .fx-top-action {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 5;
+}
+.fx-pixel-stretch .fx-caption {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.fx-pixel-stretch .fx-render-status {
+  position: absolute;
+  bottom: 18px;
+  left: 22px;
+  font: 10px monospace;
+  pointer-events: none;
+  z-index: 3;
+}
+.fx-pixel-stretch {
+  height: var(--effect-height, 640px);
+  min-height: 160px;
+  background: #203a3a;
+  overflow: hidden;
+}
+.fx-pixel-stretch canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.fx-pixel-stretch .fx-stretch-label {
+  position: absolute;
+  top: 26px;
+  left: 30px;
+  font: 11px monospace;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background: rgba(26, 26, 26, 0.4392156863);
+  padding: 6px 9px;
+  pointer-events: none;
+}

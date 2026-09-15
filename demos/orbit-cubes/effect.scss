@@ -1,0 +1,7 @@
+@use '../../scss/tokens' as t;
+@use '../../scss/cube';
+.fx-orbit-cubes{@include t.effect;@include cube.structure;height:var(--effect-height,640px);min-height:340px;background:transparent;color:#20211e;perspective:1000px;overflow:hidden;
+ .fx-orbit{position:absolute;left:50%;top:48%;transform-style:preserve-3d;}.fx-orbit-anchor{position:absolute;transform-style:preserve-3d;--size:calc(clamp(80px,12vw,150px) * var(--cube-scale,1));&--0{left:90px;top:-150px;transform:translateZ(-50px);}&--1{--size:calc(clamp(60px,8vw,100px) * var(--cube-scale,1));left:-170px;top:80px;transform:translateZ(80px);}&--2{--size:calc(clamp(38px,4vw,50px) * var(--cube-scale,1));left:50px;top:140px;transform:translateZ(60px);}}
+ h2{position:absolute;left:8%;top:13%;font:normal 35px/1.2 Arial,sans-serif;margin:0;}p{position:absolute;left:8%;bottom:12%;font-size:12px;max-width:240px;}
+ @media(max-width:700px){.fx-orbit-anchor--0{left:10px;top:-90px}.fx-orbit-anchor--1{left:-115px;top:60px}.fx-orbit-anchor--2{left:40px;top:145px}}
+}

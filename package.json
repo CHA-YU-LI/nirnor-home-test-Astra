@@ -1,0 +1,14 @@
+{
+  "name": "nirnor-effects-library",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "scaffold:pages": "node scripts/generate-pages.mjs && node scripts/sync-layout.mjs",
+    "sync:layout": "node scripts/sync-layout.mjs",
+    "build:css": "node scripts/sync-layout.mjs && sass scss:css demos:demos --no-source-map --style=expanded",
+    "watch:css": "sass --watch scss:css demos:demos --no-source-map --style=expanded",
+    "serve": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "devDependencies": { "sass": "1.97.3" }
+}

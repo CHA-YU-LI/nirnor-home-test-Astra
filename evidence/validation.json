@@ -1,0 +1,20 @@
+{
+  "demos": [
+    { "slug": "blink-type", "status": "pending" },
+    { "slug": "chaos-attractor", "status": "pending" },
+    { "slug": "orbit-cubes", "status": "pending" },
+    { "slug": "unfold-cube", "status": "pending" },
+    { "slug": "lattice-pulse", "status": "pending" },
+    { "slug": "pixel-stretch", "status": "pending" },
+    { "slug": "service-slider", "status": "pending" },
+    { "slug": "topics-accordion", "status": "pending" },
+    { "slug": "mobile-menu", "status": "pending" },
+    { "slug": "link-feedback", "status": "pending" },
+    { "slug": "page-transition", "status": "pending" },
+    { "slug": "scroll-navigation", "status": "pending" },
+    { "slug": "video-reveal", "status": "pending" },
+    { "slug": "contact-controls", "status": "pending" },
+    { "slug": "works-gallery", "status": "pending" },
+    { "slug": "home-sequence", "status": "pending" }
+  ]
+}

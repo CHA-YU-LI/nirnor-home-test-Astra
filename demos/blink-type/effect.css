@@ -1,0 +1,97 @@
+.fx-blink-type {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-width: 0;
+  font-family: Arial, "Microsoft JhengHei", sans-serif;
+  line-height: 1.6;
+}
+.fx-blink-type, .fx-blink-type * {
+  box-sizing: border-box;
+}
+.fx-blink-type button, .fx-blink-type input, .fx-blink-type select, .fx-blink-type textarea {
+  font: inherit;
+}
+.fx-blink-type button, .fx-blink-type a {
+  -webkit-tap-highlight-color: transparent;
+}
+.fx-blink-type button {
+  cursor: pointer;
+}
+.fx-blink-type :focus-visible {
+  outline: 2px solid #6c8138;
+  outline-offset: 4px;
+}
+.fx-blink-type [hidden] {
+  display: none !important;
+}
+.fx-blink-type .fx-scroller {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #929984 #f7f7f2;
+}
+.fx-blink-type .fx-action {
+  border: 1px solid rgba(26, 26, 26, 0.3137254902);
+  background: rgba(246, 246, 239, 0.8666666667);
+  padding: 8px 14px;
+  color: #20251b;
+  font-size: 12px;
+  min-height: 40px;
+  cursor: pointer;
+}
+.fx-blink-type .fx-top-action {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 5;
+}
+.fx-blink-type .fx-caption {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.fx-blink-type .fx-render-status {
+  position: absolute;
+  bottom: 18px;
+  left: 22px;
+  font: 10px monospace;
+  pointer-events: none;
+  z-index: 3;
+}
+.fx-blink-type {
+  height: var(--effect-height, 640px);
+  background: #f7f7f2;
+  color: #20211e;
+}
+.fx-blink-type .fx-type-copy {
+  padding: 70px 7% 20px;
+  min-height: 530px;
+}
+.fx-blink-type h2 {
+  font: italic clamp(48px, 7vw, 88px)/1.15 Georgia, serif;
+  margin: 30px 0;
+}
+.fx-blink-type p {
+  white-space: pre-wrap;
+  max-width: 500px;
+}
+.fx-blink-type .fx-wordmark {
+  font: bold 55px/1 Georgia, serif;
+  letter-spacing: -3px;
+}
+.fx-blink-type .fx-member {
+  margin: 0 7%;
+  padding: 35px 0;
+  border-top: 1px solid rgba(26, 26, 26, 0.1882352941);
+  min-height: 140px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  font-size: 16px;
+}
+.fx-blink-type .fx-type-end {
+  height: 120px;
+}
