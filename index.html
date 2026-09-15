@@ -1,163 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a0a0a">
-  <meta name="description" content="An independent interactive study of form, light, and the space between. Inspired by NIRNOR.">
-  <title>Form / feeling — A NIRNOR-inspired study</title>
+  <meta name="description" content="以 NIRNOR 為靈感，探索形體、光影與留白的獨立互動創作。">
+  <title>形體 / 感知 — 以 NIRNOR 為靈感的互動創作</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a0a0a'/%3E%3Ctext x='7' y='25' font-family='Arial' font-size='28' fill='%23dcf99a'%3En%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300,0,0" rel="stylesheet">
   <!-- Pinned HTTPS versions keep the standalone example reproducible.
        If upgraded, update BOTH Three.js URLs to the same release. -->
   <script type="importmap">
     { "imports": { "three": "https://unpkg.com/three@0.170.0/build/three.module.js" } }
   </script>
-</head>
+<link rel="stylesheet" href="css/site.css"></head>
 <body>
-  <canvas id="webgl" aria-hidden="true"></canvas>
+<!-- site-header:start -->
+<header class="site-header" data-site-header>
+  <div class="site-header__inner">
+    <a class="site-brand" href="index.html" aria-label="動態實驗室 — 首頁">動態實驗室</a>
+    <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="展開選單" hidden><span></span><span></span></button>
+    <nav class="site-navigation" id="site-navigation" aria-label="主要導覽">
+      <a href="index.html" aria-current="page">首頁</a>
+      <a href="library.html" >特效庫</a>
+      <a href="audit.html" >觀察紀錄</a>
+      <a href="about.html" >關於本站</a>
+    </nav>
+  </div>
+</header>
+<!-- site-header:end -->
+<canvas id="webgl" aria-hidden="true"></canvas>
   <div class="fallback" id="fallback" aria-hidden="true"></div>
   <div class="grid" aria-hidden="true"></div>
 
   <div class="page">
-    <header class="header">
-      <a class="brand" href="#main" aria-label="Form and feeling — home">
-        <span class="wordmark">nirnor<span class="footer-mark">.</span></span>
-        <span class="brand-note">Independent<br>visual study</span>
-      </a>
-      <nav class="nav" aria-label="Main navigation">
-        <button class="text-button" id="about-open" aria-haspopup="dialog">The idea</button>
-        <a href="https://nirnor.jp/" target="_blank" rel="noopener noreferrer">The inspiration<span class="external-arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
-      </nav>
-    </header>
-
     <main class="hero" id="main">
       <div class="hero-top">
-        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Form / Feeling</p>
-        <p class="edition micro">An interactive study — 01</p>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> 形體 / 感知</p>
+        <p class="edition micro">互動探索 — 01</p>
       </div>
-      <p class="status" id="status" role="status">Preparing the form…</p>
+      <p class="status" id="status" role="status">正在載入形體…</p>
       <div class="hero-copy">
-        <p class="hero-kicker" lang="ja">かたちの、その先へ。</p>
-        <h1><span>Shaping</span><span class="second-line">the <em>unseen.</em></span></h1>
-        <p class="hero-caption">A conversation between<br>form, light &amp; possibility.</p>
+        <p class="hero-kicker">走向形體之外。</p>
+        <h1><span>塑造</span><span class="second-line"><em>未見之境</em></span></h1>
+        <p class="hero-caption">讓形體、光影<br>與可能性展開對話。</p>
       </div>
-      <span class="cross" aria-hidden="true">+</span>
-      <p class="object-note micro"><strong id="material-caption">01 / Dark chrome</strong>Move your pointer to explore</p>
+      <span class="cross material-symbols-outlined" aria-hidden="true">add</span>
+      <p class="object-note micro"><strong id="material-caption">01 / 暗色鍍鉻</strong>移動游標，探索形體</p>
     </main>
 
-    <section class="bottom" aria-label="Explore the sculpture">
+    <section class="bottom" aria-label="探索雕塑">
       <div class="bottom-intro">
-        <p class="description">A little movement.<br>A different way of seeing.</p>
-        <button class="cta" id="perspective" disabled>Change perspective<span class="cta-arrow" aria-hidden="true">↗</span></button>
+        <p class="description">一點移動，<br>換一種觀看方式。</p>
+        <button class="cta" id="perspective" disabled>切換視角<span class="material-symbols-outlined cta-arrow" aria-hidden="true">north_east</span></button>
       </div>
       <div class="controls">
-        <div class="material-switch" role="group" aria-label="Sculpture material">
-          <button data-material="chrome" aria-pressed="true" disabled>Chrome</button>
-          <button data-material="glass" aria-pressed="false" disabled>Glass</button>
+        <div class="material-switch" role="group" aria-label="雕塑材質">
+          <button data-material="chrome" aria-pressed="true" disabled>鍍鉻</button>
+          <button data-material="glass" aria-pressed="false" disabled>玻璃</button>
         </div>
-        <button class="motion-button" id="motion" aria-pressed="false" aria-label="Pause animation" disabled><span class="motion-icon" aria-hidden="true">Ⅱ</span><span id="motion-label">Pause</span></button>
+        <button class="motion-button" id="motion" aria-pressed="false" aria-label="暫停動畫" disabled><span class="material-symbols-outlined motion-icon" aria-hidden="true">pause</span><span id="motion-label">暫停</span></button>
       </div>
     </section>
 
     <div class="explore-bar">
-      <p class="micro">There is more to feel.</p>
-      <a class="micro" href="#particles">Explore the experiments <span aria-hidden="true">↓</span></a>
+      <p class="micro">更多感受，等你探索。</p>
+      <a class="micro" href="library.html">探索 16 個特效 <span class="material-symbols-outlined" aria-hidden="true">south</span></a>
     </div>
   </div>
 
   <div class="experiments">
     <section class="experiment" id="particles" aria-labelledby="particles-title" data-demo="particles">
       <div class="experiment-heading">
-        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> 02 / Particle field</p>
-        <a class="micro experiment-next" href="#terrain">Next experiment <span aria-hidden="true">↘</span></a>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> 02 / 粒子場</p>
+        <a class="micro experiment-next" href="#terrain">下一個實驗 <span class="material-symbols-outlined" aria-hidden="true">south_east</span></a>
       </div>
       <div class="experiment-layout">
         <div class="experiment-copy">
-          <p class="experiment-category micro">Order meets chance</p>
-          <h2 id="particles-title">A little<br><em>chaos.</em></h2>
-          <p class="experiment-description">Thousands of points.<br>One shared rhythm.</p>
-          <p class="experiment-instruction">Move through the field, gather it into an orb, or send a pulse and watch it breathe.</p>
-          <div class="experiment-detail micro"><span aria-hidden="true">↗</span> Move to disturb. Tap to pulse.</div>
+          <p class="experiment-category micro">當秩序遇上偶然</p>
+          <h2 id="particles-title">一點<br><em>混沌。</em></h2>
+          <p class="experiment-description">萬千光點，<br>共享一段節奏。</p>
+          <p class="experiment-instruction">移動游標穿梭粒子場，將粒子聚成球體，或送出脈衝，看它隨之起伏。</p>
+          <div class="experiment-detail micro"><span class="material-symbols-outlined" aria-hidden="true">north_east</span> 移動擾動粒子，輕點送出脈衝。</div>
         </div>
         <div class="demo-panel">
-          <div class="demo-stage" aria-label="Interactive particle field">
+          <div class="demo-stage" aria-label="互動粒子場">
             <canvas id="particles-canvas" aria-hidden="true"></canvas>
             <div class="demo-placeholder" aria-hidden="true"></div>
-            <div class="demo-stage-label micro" aria-hidden="true"><span data-demo-caption>Nebula / Open field</span><span>F—02</span></div>
-            <p class="demo-status" role="status">The particle field will appear here.</p>
-            <span class="demo-corner demo-corner--top" aria-hidden="true">+</span>
-            <span class="demo-corner demo-corner--bottom" aria-hidden="true">+</span>
+            <div class="demo-stage-label micro" aria-hidden="true"><span data-demo-caption>星雲 / 開放場域</span><span>形體—02</span></div>
+            <p class="demo-status" role="status">粒子場將在此呈現。</p>
+            <span class="demo-corner demo-corner--top material-symbols-outlined" aria-hidden="true">add</span>
+            <span class="demo-corner demo-corner--bottom material-symbols-outlined" aria-hidden="true">add</span>
           </div>
           <div class="demo-toolbar">
-            <div class="material-switch" role="group" aria-label="Particle formation">
-              <button data-formation="nebula" aria-pressed="true" disabled>Nebula</button>
-              <button data-formation="orb" aria-pressed="false" disabled>Orb</button>
+            <div class="material-switch" role="group" aria-label="粒子排列方式">
+              <button data-formation="nebula" aria-pressed="true" disabled>星雲</button>
+              <button data-formation="orb" aria-pressed="false" disabled>球體</button>
             </div>
-            <button class="demo-action" data-pulse disabled>Send a pulse <span aria-hidden="true">↗</span></button>
-            <button class="demo-pause micro" aria-pressed="false" disabled>Pause animation</button>
+            <button class="demo-action" data-pulse disabled>送出脈衝 <span class="material-symbols-outlined" aria-hidden="true">north_east</span></button>
+            <button class="demo-pause micro" aria-pressed="false" disabled>暫停動畫</button>
           </div>
         </div>
       </div>
-      <div class="experiment-footnote micro"><span>Small gestures. Unexpected patterns.</span><span>Form / 02</span></div>
+      <div class="experiment-footnote micro"><span>細微動作，交織意想不到的圖樣。</span><span>形體 / 02</span></div>
     </section>
 
     <section class="experiment experiment--terrain" id="terrain" aria-labelledby="terrain-title" data-demo="terrain">
       <div class="experiment-heading">
-        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> 03 / Living terrain</p>
-        <a class="micro experiment-next" href="#main">Back to the beginning <span aria-hidden="true">↑</span></a>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> 03 / 流動地景</p>
+        <a class="micro experiment-next" href="#main">回到起點 <span class="material-symbols-outlined" aria-hidden="true">north</span></a>
       </div>
       <div class="experiment-layout">
         <div class="experiment-copy">
-          <p class="experiment-category micro">Nothing stays still</p>
-          <h2 id="terrain-title">Find your<br><em>flow.</em></h2>
-          <p class="experiment-description">A landscape with<br>a life of its own.</p>
-          <p class="experiment-instruction">Raise the waves, reveal the underlying lines, or touch the surface to leave a ripple.</p>
-          <div class="experiment-detail micro"><span aria-hidden="true">↗</span> Tap the landscape to make waves.</div>
+          <p class="experiment-category micro">萬物持續流動</p>
+          <h2 id="terrain-title">隨心<br><em>流動。</em></h2>
+          <p class="experiment-description">一片擁有<br>自身生命力的地景。</p>
+          <p class="experiment-instruction">調高波浪、顯露底層線條，或輕觸表面，留下一圈漣漪。</p>
+          <div class="experiment-detail micro"><span class="material-symbols-outlined" aria-hidden="true">north_east</span> 輕點地景，激起波浪。</div>
         </div>
         <div class="demo-panel">
-          <div class="demo-stage" aria-label="Interactive wave terrain">
+          <div class="demo-stage" aria-label="互動波浪地景">
             <canvas id="terrain-canvas" aria-hidden="true"></canvas>
             <div class="demo-placeholder" aria-hidden="true"></div>
-            <div class="demo-stage-label micro" aria-hidden="true"><span data-demo-caption>Surface / Contour study</span><span>F—03</span></div>
-            <p class="demo-status" role="status">The living terrain will appear here.</p>
-            <span class="demo-corner demo-corner--top" aria-hidden="true">+</span>
-            <span class="demo-corner demo-corner--bottom" aria-hidden="true">+</span>
+            <div class="demo-stage-label micro" aria-hidden="true"><span data-demo-caption>表面 / 輪廓探索</span><span>形體—03</span></div>
+            <p class="demo-status" role="status">流動地景將在此呈現。</p>
+            <span class="demo-corner demo-corner--top material-symbols-outlined" aria-hidden="true">add</span>
+            <span class="demo-corner demo-corner--bottom material-symbols-outlined" aria-hidden="true">add</span>
           </div>
           <div class="demo-toolbar">
-            <div class="material-switch" role="group" aria-label="Terrain appearance">
-              <button data-surface="solid" aria-pressed="true" disabled>Surface</button>
-              <button data-surface="wireframe" aria-pressed="false" disabled>Wireframe</button>
+            <div class="material-switch" role="group" aria-label="地景外觀">
+              <button data-surface="solid" aria-pressed="true" disabled>表面</button>
+              <button data-surface="wireframe" aria-pressed="false" disabled>線框</button>
             </div>
             <div class="demo-range">
-              <label class="micro" for="wave-height">Wave height <output id="wave-value" for="wave-height">55%</output></label>
+              <label class="micro" for="wave-height">波浪高度 <output id="wave-value" for="wave-height">55%</output></label>
               <input id="wave-height" type="range" min="0" max="100" value="55" disabled>
             </div>
-            <button class="demo-action" data-ripple disabled>Make a ripple <span aria-hidden="true">↗</span></button>
-            <button class="demo-pause micro" aria-pressed="false" disabled>Pause animation</button>
+            <button class="demo-action" data-ripple disabled>激起漣漪 <span class="material-symbols-outlined" aria-hidden="true">north_east</span></button>
+            <button class="demo-pause micro" aria-pressed="false" disabled>暫停動畫</button>
           </div>
         </div>
       </div>
-      <div class="experiment-footnote micro"><span>Every touch leaves a trace.</span><span>Form / 03</span></div>
+      <div class="experiment-footnote micro"><span>每次觸碰，都留下痕跡。</span><span>形體 / 03</span></div>
     </section>
-    <footer class="footer site-footer">
-      <p class="micro">NIRNOR-inspired <span class="footer-mark">/</span> Independent concept</p>
-      <p class="micro footer-detail">An exploration of form &amp; interaction</p>
-      <span class="micro" aria-hidden="true">[ n / f ]</span>
-    </footer>
-  </div>
+    </div>
 
-  <dialog id="about" aria-labelledby="about-title">
-    <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Behind the form</p>
-    <h2 id="about-title">Less noise.<br>More feeling.</h2>
-    <p>A study in contrast: expressive typography, quiet space, and a sculptural form that responds to you.</p>
-    <p>Move your pointer to turn the form, switch between chrome and glass, or change perspective to see it in a new light.</p>
-    <p>This independent concept is inspired by <a href="https://nirnor.jp/" target="_blank" rel="noopener noreferrer">NIRNOR<span class="sr-only"> (opens in a new tab)</span></a>. It is not the official NIRNOR website.</p>
-    <form method="dialog"><button class="cta" autofocus>Back to the form<span aria-hidden="true">↗</span></button></form>
-  </dialog>
-  <noscript><p class="status">Enable JavaScript to explore the interactive sculpture.</p></noscript>
+  <noscript><p class="status">請啟用 JavaScript，以探索互動雕塑。</p></noscript>
 
   <script type="module" src="js/main.js"></script>
   <script type="module" src="js/demos.js"></script>
+<!-- site-footer:start -->
+<footer class="site-footer-shared">
+  <div class="site-footer-shared__inner">
+    <p>動態實驗室 <span>— 獨立動態研究</span></p>
+    <nav aria-label="頁尾導覽">
+      <a href="about.html">關於本站</a>
+      <a href="library.html">探索特效庫</a>
+      <a href="https://nirnor.jp/" target="_blank" rel="noopener noreferrer">靈感來源<span class="site-sr-only">（在新分頁開啟）</span></a>
+    </nav>
+  </div>
+</footer>
+<!-- site-footer:end -->
+<script type="module" src="js/site.js"></script>
 </body>
 </html>

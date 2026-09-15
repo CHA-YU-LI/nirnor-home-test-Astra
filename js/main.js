@@ -1,11 +1,7 @@
 // UI remains usable even if the CDN or WebGL is unavailable. Dynamic imports
 // deliberately allow a friendly fallback instead of a blank hero on failure.
-const about = document.querySelector('#about');
-document.querySelector('#about-open').addEventListener('click', () => about.showModal());
-about.addEventListener('click', (event) => {
-  const rect = about.getBoundingClientRect();
-  if (event.target === about && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) about.close();
-});
+// Keep previously shared links to the introduction working.
+if (location.hash === '#about') location.replace('about.html');
 
 const status = document.querySelector('#status');
 const fallback = document.querySelector('#fallback');
@@ -177,9 +173,9 @@ try {
   heroObserver.observe(document.querySelector('.page'));
   function syncMotion() {
     motionButton.setAttribute('aria-pressed', String(paused));
-    motionButton.setAttribute('aria-label', paused ? 'Resume animation' : 'Pause animation');
-    document.querySelector('#motion-label').textContent = paused ? 'Resume' : 'Pause';
-    document.querySelector('.motion-icon').textContent = paused ? '▷' : 'Ⅱ';
+    motionButton.setAttribute('aria-label', paused ? '繼續動畫' : '暫停動畫');
+    document.querySelector('#motion-label').textContent = paused ? '繼續' : '暫停';
+    document.querySelector('.motion-icon').textContent = paused ? 'play_arrow' : 'pause';
     cancelAnimationFrame(frame);
     frame = 0;
     schedule();
@@ -221,7 +217,7 @@ try {
     for (const [key, value] of Object.entries(recipe)) if (key !== 'color') material[key] = value;
     material.needsUpdate = true;
     materialButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-    document.querySelector('#material-caption').textContent = name === 'chrome' ? '01 / Dark chrome' : '02 / Smoked glass';
+    document.querySelector('#material-caption').textContent = name === 'chrome' ? '01 / 暗色鍍鉻' : '02 / 煙燻玻璃';
     draw();
   }));
   canvas.addEventListener('webglcontextlost', event => {
@@ -231,7 +227,7 @@ try {
     frame = 0;
     fallback.hidden = false;
     status.hidden = false;
-    status.textContent = 'The 3D view was interrupted. Reload to restore it.';
+    status.textContent = '立體畫面已中斷，請重新載入以恢復顯示。';
     [motionButton, perspectiveButton, ...materialButtons].forEach(button => button.disabled = true);
   });
   // PMREM render targets need rebuilding after context loss; a reload is
@@ -255,7 +251,7 @@ try {
   document.querySelector('#webgl').hidden = true;
   fallback.hidden = false;
   status.hidden = false;
-  status.textContent = 'The 3D view is unavailable. Check your connection and WebGL support, then reload.';
+  status.textContent = '無法顯示立體畫面。請確認網路連線與瀏覽器是否支援 WebGL，再重新載入。';
   // No error payload or visitor data is sent to any service.
   console.warn('Unable to initialize the 3D hero:', error instanceof Error ? error.message : 'Unknown rendering error');
 }

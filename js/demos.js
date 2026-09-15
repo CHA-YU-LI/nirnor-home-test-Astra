@@ -19,7 +19,7 @@ document.querySelectorAll('[data-demo]').forEach(section => {
   let elapsed = 0;
 
   function syncPause() {
-    pauseButton.textContent = paused ? 'Resume animation' : 'Pause animation';
+    pauseButton.textContent = paused ? '繼續動畫' : '暫停動畫';
     pauseButton.setAttribute('aria-pressed', String(paused));
   }
   function stop() {
@@ -54,7 +54,7 @@ document.querySelectorAll('[data-demo]').forEach(section => {
     stage.classList.remove('is-ready');
     canvas.hidden = true;
     status.hidden = false;
-    status.textContent = 'This study needs WebGL and an internet connection. Reload to try again.';
+    status.textContent = '此互動作品需要 WebGL 支援與網路連線，請重新載入再試一次。';
   }
   function resize() {
     if (!study || failed) return;
@@ -232,7 +232,7 @@ function createParticleField(THREE, scene, section, render) {
   formations.forEach(button => button.addEventListener('click', () => {
     targetMorph = button.dataset.formation === 'orb' ? 1 : 0;
     formations.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-    section.querySelector('[data-demo-caption]').textContent = targetMorph ? 'Orb / Shared gravity' : 'Nebula / Open field';
+    section.querySelector('[data-demo-caption]').textContent = targetMorph ? '球體 / 共享引力' : '星雲 / 開放場域';
     render();
   }));
   function pulse() { uniforms.uPulse.value = 1; render(); }
@@ -335,7 +335,7 @@ function createTerrain(THREE, scene, section, render) {
     material.wireframe = button.dataset.surface === 'wireframe';
     uniforms.uWireframe.value = Number(material.wireframe);
     surfaces.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-    section.querySelector('[data-demo-caption]').textContent = material.wireframe ? 'Wireframe / Beneath the surface' : 'Surface / Contour study';
+    section.querySelector('[data-demo-caption]').textContent = material.wireframe ? '線框 / 表面之下' : '表面 / 輪廓探索';
     render();
   }));
   section.querySelector('#wave-height').addEventListener('input', event => {

@@ -28,7 +28,8 @@ body, h1, h2, p {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -108,11 +109,16 @@ a, button, dialog {
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   height: 116px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(12px);
   gap: 28px;
 }
 
@@ -130,7 +136,7 @@ a, button, dialog {
 }
 
 .brand-note, .eyebrow, .nav, .micro, .material-switch, .motion-button {
-  font-family: "Courier New", monospace;
+  font-family: "Courier New", "PingFang TC", "Microsoft JhengHei", monospace;
   font-size: 10px;
   line-height: 1.5;
   letter-spacing: .1em;
@@ -148,6 +154,31 @@ a, button, dialog {
   align-items: center;
 }
 
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  position: relative;
+  z-index: 5;
+}
+
+.menu-toggle span {
+  position: absolute;
+  left: 9px;
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+  transition: transform .25s, top .25s;
+}
+
+.menu-toggle span:first-child { top: 17px; }
+.menu-toggle span:last-child { top: 25px; }
+.menu-toggle[aria-expanded="true"] span:first-child { top: 21px; transform: rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:last-child { top: 21px; transform: rotate(-45deg); }
+
 .text-button {
   padding: 12px 0;
   border: 0;
@@ -162,9 +193,35 @@ a, button, dialog {
   color: var(--accent);
 }
 
-.external-arrow {
-  margin-left: 8px;
+.nav a[aria-current="page"] {
   color: var(--accent);
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.5;
+}
+
+.material-symbols-outlined {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Material Symbols Outlined";
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.15em;
+  line-height: 1;
+  vertical-align: middle;
+  height: 1em;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "liga";
 }
 
 .hero {
@@ -217,8 +274,9 @@ a, button, dialog {
 h1 {
   font-size: clamp(84px, 9.5vw, 176px);
   font-weight: 400;
-  line-height: .93;
-  letter-spacing: -.075em;
+  line-height: 1.14;
+  letter-spacing: -.025em;
+  font-family: "Noto Serif TC", "PingFang TC", "Microsoft JhengHei", serif;
 }
 
 h1 span {
@@ -230,9 +288,9 @@ h1 .second-line {
 }
 
 h1 em {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: inherit;
   font-weight: 400;
-  letter-spacing: -.065em;
+  letter-spacing: -.025em;
 }
 
 .hero-caption {
@@ -271,8 +329,8 @@ h1 em {
   position: absolute;
   right: 9%;
   top: 24%;
-  font: 20px "Courier New", monospace;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 300;
   color: #ffffff55;
 }
 
@@ -323,6 +381,7 @@ h1 em {
 .cta-arrow {
   font-size: 20px;
   line-height: 1;
+  flex: 0 0 auto;
 }
 
 .controls {
@@ -360,17 +419,22 @@ h1 em {
   align-items: center;
   gap: 9px;
   padding: 13px 0;
-  min-width: 94px;
+  min-width: 118px;
   background: transparent;
   border: 0;
   color: var(--muted);
+  white-space: nowrap;
+  flex: 0 0 auto;
 }
 
 .motion-icon {
-  font-size: 13px;
-  width: 12px;
+  font-size: 18px;
+  width: 18px;
+  flex: 0 0 18px;
+  display: inline-flex;
+  justify-content: center;
   color: var(--ink);
-  letter-spacing: -3px;
+  letter-spacing: normal;
 }
 
 button:disabled {
@@ -452,7 +516,8 @@ dialog h2 {
   margin: 28px 0 20px;
   font-size: 40px;
   font-weight: 400;
-  letter-spacing: -.06em;
+  letter-spacing: -.02em;
+  font-family: "Noto Serif TC", "PingFang TC", "Microsoft JhengHei", serif;
 }
 
 dialog p {
@@ -479,6 +544,14 @@ dialog .cta {
 }
 
 @media (max-width: $tablet) {
+  .bottom {
+    grid-template-columns: 1fr;
+  }
+  .bottom-intro,
+  .controls {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
   .brand-note {
     display: none;
   }
@@ -505,13 +578,49 @@ dialog .cta {
   }
   .header {
     height: 90px;
+    flex: 0 0 90px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
   }
   .wordmark {
     font-size: 35px;
   }
   .nav {
-    gap: 22px;
-    font-size: 9px;
+    position: absolute;
+    top: 100%;
+    left: calc(-1 * var(--gutter));
+    right: calc(-1 * var(--gutter));
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 14px var(--gutter) 20px;
+    border-bottom: 1px solid var(--line);
+    background: #0a0a0af5;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity .25s, transform .25s, visibility .25s;
+  }
+  .nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .nav a, .nav button {
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+    min-height: 48px;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+  .menu-toggle {
+    display: block;
   }
   .hero {
     min-height: 505px;
@@ -569,10 +678,19 @@ dialog .cta {
     padding: 10px 20px;
   }
   .footer .micro {
-    font-size: 8px;
+    font-size: 14px;
   }
   .footer {
     min-height: 48px;
+  }
+
+  .brand-note, .eyebrow, .nav, .micro, .material-switch, .motion-button,
+  .hero-kicker, .hero-caption, .description, .cta, .status,
+  .experiment-instruction, .experiment-detail, .experiment-footnote,
+  .demo-stage-label, .demo-status, .demo-action, .demo-pause,
+  .demo-range label, .explore-bar .micro, .experiment-category,
+  .experiment-next {
+    font-size: 14px;
   }
   .footer-detail {
     display: none;
@@ -587,10 +705,6 @@ dialog .cta {
 }
 
 @media (max-width: $small-mobile) {
-  .nav {
-    gap: 14px;
-    font-size: 8px;
-  }
   .description {
     max-width: 125px;
   }
@@ -604,6 +718,20 @@ dialog .cta {
   *, *::before, *::after {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+// Mobile copy keeps a readable minimum size. Icon glyphs are intentionally
+// excluded so their visual scale can remain proportional to the labels.
+@media (max-width: $mobile) {
+  .brand-note, .eyebrow, .nav, .nav a, .nav button, .micro,
+  .material-switch, .material-switch button, .motion-button,
+  .hero-kicker, .hero-caption, .description, .cta, .status,
+  dialog p, dialog .cta, .object-note, .experiment-category,
+  .experiment-instruction, .experiment-detail, .experiment-footnote,
+  .experiment-next, .demo-stage-label, .demo-status, .demo-action,
+  .demo-pause, .demo-range label, .explore-bar .micro {
+    font-size: 14px !important;
   }
 }
 
@@ -660,16 +788,17 @@ dialog .cta {
   h2 {
     font-size: clamp(54px, 5.8vw, 100px);
     font-weight: 400;
-    line-height: .98;
-    letter-spacing: -.065em;
+    line-height: 1.2;
+    letter-spacing: -.02em;
+    font-family: "Noto Serif TC", "PingFang TC", "Microsoft JhengHei", serif;
 
-    em { font-family: Georgia, "Times New Roman", serif; color: var(--demo-accent); }
+    em { font-family: inherit; color: var(--demo-accent); }
   }
 
   &-description { margin-top: 30px; font-size: 17px; line-height: 1.6; }
   &-instruction { max-width: 270px; margin-top: 16px; color: var(--muted); font-size: 13px; line-height: 1.85; }
-  &-detail { display: flex; gap: 12px; align-items: baseline; margin-top: 36px; color: var(--muted); font-size: 9px; }
-  &-detail span { color: var(--demo-accent); font-size: 17px; }
+  &-detail { display: flex; gap: 12px; align-items: center; margin-top: 36px; color: var(--muted); font-size: 9px; line-height: 1.6; }
+  &-detail span { color: var(--demo-accent); font-size: 17px; flex: 0 0 17px; }
 
   &-footnote {
     border-top: 1px solid var(--line);
@@ -731,7 +860,8 @@ dialog .cta {
 .demo-corner {
   position: absolute;
   color: #ffffff40;
-  font: 18px "Courier New", monospace;
+  font-size: 18px;
+  font-weight: 300;
   pointer-events: none;
 
   &--top { left: 22px; bottom: 20px; }
@@ -750,6 +880,9 @@ dialog .cta {
 }
 
 .demo-action, .demo-pause {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: transparent;
   border: 0;
   min-height: 44px;
@@ -760,7 +893,7 @@ dialog .cta {
   &:hover { color: var(--demo-accent); }
 }
 
-.demo-action span { margin-left: 8px; color: var(--demo-accent); }
+.demo-action span { margin-left: 0; color: var(--demo-accent); flex: 0 0 auto; }
 .demo-pause { margin-left: auto; font-size: 9px; }
 
 .demo-range {
@@ -774,6 +907,17 @@ dialog .cta {
 }
 
 .site-footer { margin-inline: var(--gutter); min-height: 72px; }
+
+// Keep desktop text legible across navigation, controls, captions, and dialogs.
+@media (min-width: ($mobile + 1px)) {
+  .brand-note, .eyebrow, .nav, .micro, .material-switch, .motion-button,
+  .hero-kicker, .hero-caption, .description, .cta, .motion-icon,
+  .footer .micro, .status, dialog p,
+  .experiment-instruction, .experiment-detail, .experiment-footnote,
+  .demo-stage-label, .demo-status, .demo-action, .demo-pause, .demo-range label {
+    font-size: 16px;
+  }
+}
 
 @media (max-width: $tablet) {
   .experiment-layout { gap: 30px; }
