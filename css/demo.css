@@ -691,23 +691,33 @@ td {
   padding: 46px 0;
 }
 
+.demo-info > * {
+  min-width: 0;
+}
+
 .demo-info h2 {
   font-weight: 400;
   font-size: 21px;
-  margin: 0 0 24px;
+  margin: 0 0 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1254901961);
 }
 
 .demo-info h3 {
   font-size: 16px;
   font-weight: 400;
   color: #f0efe9;
-  margin: 24px 0 8px;
+  margin: 32px 0 12px;
 }
 
 .demo-info p, .demo-info li {
   font-size: 16px;
   color: #a1a79a;
   line-height: 1.85;
+}
+
+.demo-info p {
+  margin: 0 0 20px;
 }
 
 .demo-info a {
@@ -722,19 +732,30 @@ td {
 }
 
 .demo-info .lib-tags {
-  margin: 16px 0;
+  margin: 16px 0 24px;
 }
 
 .demo-info pre {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   padding: 20px;
   background: #141710;
   border: 1px solid rgba(255, 255, 255, 0.1254901961);
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   font-size: 16px;
   line-height: 1.8;
   font-family: Consolas, monospace;
   color: #dae9bd;
   white-space: pre;
+}
+
+.demo-info pre code {
+  display: block;
+  min-width: max-content;
 }
 
 .demo-info .code-heading {
