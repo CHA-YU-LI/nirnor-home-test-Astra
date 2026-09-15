@@ -1,4 +1,62 @@
 @charset "UTF-8";
+.lib-grid {
+  --preview-ink: #f0efe9;
+  --preview-muted: #a1a79a;
+  --preview-accent: #dcf99a;
+  --preview-bg: #0e100d;
+  --preview-surface: #1d211a;
+  --preview-line: rgba(255, 255, 255, 0.1254901961);
+}
+
+.lib-preview-tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.lib-preview-tools p {
+  margin: 0;
+  color: #a1a79a;
+  font-size: 16px;
+}
+
+.lib-card .lib-preview {
+  aspect-ratio: auto;
+}
+.lib-card .lib-preview .lib-preview-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.6;
+}
+.lib-card .lib-preview img {
+  display: block;
+  height: auto;
+  aspect-ratio: 1.6;
+}
+.lib-card .lib-preview.has-animation img {
+  display: none;
+}
+.lib-card .lib-preview span.lib-preview-id {
+  top: 12px;
+  left: 12px;
+  padding: 0;
+  background: transparent;
+}
+.lib-card .lib-preview span.lib-preview-caption {
+  position: static;
+  display: block;
+  min-height: 64px;
+  padding: 12px 56px 12px 12px;
+  background: transparent;
+  color: #f0efe9;
+  font-family: Arial, "Microsoft JhengHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -12,7 +70,9 @@ body {
   margin: 0;
   background: #0a0a0a;
   color: #f0efe9;
-  font: 15px/1.7 Arial, "Microsoft JhengHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: Arial, "Microsoft JhengHei", sans-serif;
 }
 
 a {
@@ -55,7 +115,7 @@ button:disabled {
 .lib-header {
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 5;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -80,7 +140,7 @@ button:disabled {
 .lib-header nav {
   display: flex;
   gap: 28px;
-  font-size: 13px;
+  font-size: 16px;
   color: #a1a79a;
 }
 
@@ -101,7 +161,9 @@ button:disabled {
 }
 
 .lib-kicker {
-  font: 11px/1.5 monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: monospace;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #a1a79a;
@@ -110,8 +172,8 @@ button:disabled {
 .lib-kicker::before {
   content: "●";
   color: #dcf99a;
-  margin-right: 10px;
-  font-size: 9px;
+  margin-right: 12px;
+  font-size: 16px;
 }
 
 .lib-hero h1 {
@@ -131,7 +193,7 @@ button:disabled {
 .lib-hero aside {
   max-width: 410px;
   color: #a1a79a;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .lib-hero aside p {
@@ -146,13 +208,15 @@ button:disabled {
 }
 
 .lib-stats strong {
-  font: 32px/1.2 Georgia, serif;
+  font-size: 32px;
+  line-height: 1.2;
+  font-family: Georgia, serif;
   color: #f0efe9;
   display: block;
 }
 
 .lib-stats span {
-  font-size: 11px;
+  font-size: 16px;
 }
 
 .lib-tools {
@@ -169,33 +233,33 @@ button:disabled {
 
 .lib-search-row label {
   display: grid;
-  gap: 6px;
+  gap: 4px;
   color: #a1a79a;
-  font-size: 11px;
+  font-size: 16px;
 }
 
 input[type=search], select {
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.1254901961);
   border-radius: 0;
-  background: #121410;
+  background: #141710;
   color: #f0efe9;
-  padding: 12px 14px;
+  padding: 12px 16px;
   min-height: 46px;
 }
 
 .lib-categories {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 4px;
   margin-top: 20px;
 }
 
 .lib-chip {
-  padding: 8px 14px;
+  padding: 8px 12px;
   background: none;
   border: 1px solid rgba(255, 255, 255, 0.1254901961);
-  font-size: 12px;
+  font-size: 16px;
   border-radius: 30px;
 }
 
@@ -211,7 +275,7 @@ input[type=search], select {
   gap: 20px;
   margin-bottom: 20px;
   color: #a1a79a;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .lib-grid {
@@ -254,7 +318,7 @@ input[type=search], select {
   position: absolute;
   top: 16px;
   left: 18px;
-  font: 11px monospace;
+  font: 16px monospace;
   padding: 5px 8px;
   background: rgba(10, 10, 10, 0.8);
   color: #dcf99a;
@@ -279,7 +343,7 @@ input[type=search], select {
 }
 
 .lib-card .lib-kicker {
-  font-size: 10px;
+  font-size: 16px;
 }
 
 .lib-card h2 {
@@ -291,7 +355,7 @@ input[type=search], select {
 
 .lib-card p {
   color: #a1a79a;
-  font-size: 13px;
+  font-size: 16px;
   margin: 0 0 20px;
   min-height: 44px;
 }
@@ -303,7 +367,9 @@ input[type=search], select {
 }
 
 .lib-tag {
-  font: 10px/1.5 monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: monospace;
   color: #bbc3ad;
   border: 1px solid rgba(255, 255, 255, 0.1254901961);
   padding: 4px 7px;
@@ -311,7 +377,7 @@ input[type=search], select {
 
 .lib-card small {
   display: block;
-  font-size: 11px;
+  font-size: 16px;
   color: #859775;
   margin-top: 17px;
 }
@@ -334,7 +400,7 @@ input[type=search], select {
 
 .lib-existing p {
   color: #a1a79a;
-  font-size: 13px;
+  font-size: 16px;
   max-width: 670px;
 }
 
@@ -342,13 +408,13 @@ input[type=search], select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1254901961);
   background: none;
   color: #f0efe9;
   padding: 11px 16px;
   min-height: 44px;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .lib-button:hover {
@@ -373,7 +439,7 @@ input[type=search], select {
   justify-content: space-between;
   padding: 24px 0 40px;
   color: #a1a79a;
-  font-size: 11px;
+  font-size: 16px;
   gap: 24px;
 }
 
@@ -385,7 +451,6 @@ input[type=search], select {
 
 .lib-audit h1 {
   font-size: 40px;
-  font-weight: 400;
 }
 
 .lib-audit h2 {
@@ -410,7 +475,7 @@ input[type=search], select {
 table {
   border-collapse: collapse;
   width: 100%;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 th, td {
@@ -429,7 +494,7 @@ td {
   min-width: 120px;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 991.98px) {
   .lib-wrap {
     width: calc(100% - 48px);
   }
@@ -446,7 +511,7 @@ td {
     grid-column: 1/-1;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 767.98px) {
   .lib-wrap {
     width: calc(100% - 32px);
   }
@@ -455,7 +520,7 @@ td {
   }
   .lib-header nav {
     gap: 16px;
-    font-size: 11px;
+    font-size: 14px;
   }
   .lib-hero {
     grid-template-columns: 1fr;
@@ -472,10 +537,10 @@ td {
     max-width: none;
   }
   .lib-search-row {
-    gap: 10px;
+    gap: 8px;
   }
   .lib-search-row select {
-    font-size: 12px;
+    font-size: 14px;
     padding: 10px 8px;
   }
   .lib-existing {
@@ -502,7 +567,7 @@ td {
 .demo-head {
   padding: 42px 0 30px;
   display: flex;
-  gap: 30px;
+  gap: 36px;
   justify-content: space-between;
   align-items: end;
 }
@@ -522,7 +587,7 @@ td {
 
 .demo-back {
   color: #a1a79a;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .demo-workbench {
@@ -541,13 +606,13 @@ td {
   height: 640px;
   overflow: hidden;
   background: #f7f7f2;
-  color: #1a1a1a;
+  color: #242821;
 }
 
 .demo-toolbar {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   padding: 16px 20px;
   align-items: center;
   min-height: 76px;
@@ -556,7 +621,7 @@ td {
 }
 
 .demo-toolbar p {
-  font-size: 11px;
+  font-size: 16px;
   color: #a1a79a;
   margin: 0;
   flex: 1;
@@ -570,7 +635,7 @@ td {
 }
 
 .demo-controls h2 {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   margin: 0 0 24px;
 }
@@ -583,8 +648,8 @@ td {
 .demo-control-label {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  font-size: 12px;
+  gap: 8px;
+  font-size: 16px;
 }
 
 .demo-control output {
@@ -602,17 +667,17 @@ td {
 .demo-control small {
   display: block;
   color: #a1a79a;
-  font-size: 11px;
+  font-size: 16px;
   line-height: 1.7;
 }
 
 .demo-control select {
   margin: 12px 0 8px;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .demo-mode {
-  font-size: 11px;
+  font-size: 16px;
   color: #a1a79a;
   border-top: 1px solid rgba(255, 255, 255, 0.1254901961);
   padding-top: 20px;
@@ -633,14 +698,14 @@ td {
 }
 
 .demo-info h3 {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 400;
   color: #f0efe9;
   margin: 24px 0 8px;
 }
 
 .demo-info p, .demo-info li {
-  font-size: 13px;
+  font-size: 16px;
   color: #a1a79a;
   line-height: 1.85;
 }
@@ -665,7 +730,9 @@ td {
   background: #141710;
   border: 1px solid rgba(255, 255, 255, 0.1254901961);
   overflow: auto;
-  font: 12px/1.8 Consolas, monospace;
+  font-size: 16px;
+  line-height: 1.8;
+  font-family: Consolas, monospace;
   color: #dae9bd;
   white-space: pre;
 }
@@ -682,16 +749,18 @@ td {
 }
 
 .demo-status {
-  font: 11px/1.7 monospace;
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: monospace;
   color: #a1a79a;
 }
 
 .fx-action {
   border: 1px solid rgba(26, 26, 26, 0.3137254902);
   background: rgba(246, 246, 239, 0.8666666667);
-  padding: 8px 14px;
+  padding: 8px 12px;
   color: #20251b;
-  font-size: 12px;
+  font-size: 16px;
   min-height: 40px;
   cursor: pointer;
 }
@@ -701,16 +770,18 @@ td {
   bottom: 18px;
   left: 22px;
   right: 22px;
-  font: 10px/1.6 monospace;
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: monospace;
   pointer-events: none;
   display: flex;
   justify-content: space-between;
-  gap: 15px;
+  gap: 12px;
   z-index: 3;
 }
 
 .fx-caption {
-  font-size: 11px;
+  font-size: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -732,37 +803,38 @@ td {
 
 .fx-render-status {
   position: absolute;
-  bottom: 18px;
-  left: 22px;
-  font: 10px monospace;
+  bottom: 20px;
+  left: 24px;
+  font-size: 16px;
+  font-family: monospace;
   pointer-events: none;
   z-index: 3;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 991.98px) {
   .demo-workbench {
     grid-template-columns: minmax(0, 1fr) 240px;
   }
   .demo-controls {
-    padding: 24px 18px;
+    padding: 24px 16px;
   }
   .demo-stage {
     height: 600px;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 767.98px) {
   .demo-head {
     display: block;
-    padding-top: 30px;
+    padding-top: 28px;
   }
   .demo-head h1 {
     font-size: 28px;
   }
   .demo-head p {
-    font-size: 13px;
+    font-size: 16px;
   }
   .demo-head .demo-status {
-    margin-top: 18px;
+    margin-top: 20px;
   }
   .demo-workbench {
     grid-template-columns: 1fr;
@@ -772,7 +844,7 @@ td {
     border-top: 1px solid rgba(255, 255, 255, 0.1254901961);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: 12px;
     padding: 22px 18px;
   }
   .demo-controls h2, .demo-mode {
@@ -783,7 +855,7 @@ td {
     margin: 0;
   }
   .demo-mode {
-    margin-top: 10px;
+    margin-top: 12px;
   }
   .demo-info {
     grid-template-columns: 1fr;
@@ -793,15 +865,15 @@ td {
     height: 570px;
   }
   .demo-toolbar {
-    padding: 14px;
+    padding: 12px;
     gap: 8px;
   }
   .demo-toolbar .lib-button {
     padding: 10px;
-    font-size: 12px;
+    font-size: 16px;
   }
   .demo-info pre {
-    font-size: 11px;
+    font-size: 16px;
   }
   .demo-head .demo-status {
     display: block;

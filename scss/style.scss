@@ -1,20 +1,22 @@
 // Edit this SCSS source, then compile to ../css/style.css.
+@use 'tokens' as t;
+
 // Example: sass scss/style.scss css/style.css --style=expanded --no-source-map
 
-$wide-screen: 1700px;
-$tablet: 1050px;
-$mobile: 760px;
-$small-mobile: 380px;
+$wide-screen: t.$breakpoint-xxl;
+$tablet: t.$breakpoint-lg-max;
+$mobile: t.$breakpoint-md-max;
+$small-mobile: t.$breakpoint-sm - .02px;
 
 /* Layout tokens remain CSS custom properties for runtime flexibility. */
 :root {
   color-scheme: dark;
-  --bg: #0a0a0a;
-  --ink: #f0efe9;
-  --muted: #989b95;
-  --line: #ffffff17;
-  --accent: #dcf99a;
-  --gutter: clamp(24px, 4.2vw, 80px);
+  --bg: #{t.$color-bg};
+  --ink: #{t.$color-ink};
+  --muted: #{t.$color-muted};
+  --line: #{t.$color-line};
+  --accent: #{t.$color-accent};
+  --gutter: clamp(#{t.$space-6}, 4.2vw, #{t.$space-20});
 }
 
 *, *::before, *::after {
@@ -28,8 +30,8 @@ body, h1, h2, p {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: Arial, Helvetica, "PingFang TC", "Microsoft JhengHei", sans-serif;
-  font-size: 16px;
+  font-family: t.$font-sans-wide;
+  font-size: t.$font-size-body;
   -webkit-font-smoothing: antialiased;
 }
 

@@ -13,7 +13,9 @@ body {
 
 .site-header, .site-footer-shared {
   box-sizing: border-box;
-  font: 16px/1.6 Arial, "Microsoft JhengHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: Arial, "Microsoft JhengHei", sans-serif;
   color: #f0efe9;
 }
 .site-header a, .site-footer-shared a {
@@ -55,7 +57,10 @@ body {
 }
 
 .site-brand {
-  font: 500 28px/1.4 "Noto Serif TC", "Microsoft JhengHei", serif;
+  font-size: 28px;
+  line-height: 1.4;
+  font-family: "Noto Serif TC", "Microsoft JhengHei", serif;
+  font-weight: 500;
   white-space: nowrap;
 }
 .site-brand span {
@@ -88,7 +93,7 @@ body {
   z-index: 4;
   background: #0a0a0a;
   border-top: 1px solid rgba(255, 255, 255, 0.1254901961);
-  font-size: 14px;
+  font-size: 16px;
 }
 .site-footer-shared .site-footer-shared__inner {
   width: min(1500px, 100% - var(--site-gutter) * 2);
@@ -131,15 +136,15 @@ body {
   white-space: nowrap;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 767.98px) {
   :root {
     --site-header-height: 80px;
   }
   .site-brand {
-    font-size: 24px;
+    font-size: 32px;
   }
   .site-header {
-    font-size: 14px;
+    font-size: 16px;
   }
   .site-menu-toggle:not([hidden]) {
     position: relative;

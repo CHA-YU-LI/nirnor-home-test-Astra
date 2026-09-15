@@ -3,50 +3,50 @@
 .about-page {
   width: min(1500px, calc(100% - clamp(24px, 4.2vw, 80px) * 2));
   margin: auto;
-  h1, h2, h3 { font-family: "Noto Serif TC", "Microsoft JhengHei", serif; font-weight: 400; }
+  h1, h2, h3 { font-family: t.$font-serif-short; font-weight: t.$font-weight-regular; }
   p { color: t.$muted; line-height: 1.9; }
   a:not(.lib-button) { color: t.$accent; text-decoration: underline; text-underline-offset: 5px; }
 }
-.about-eyebrow { font-size: 14px; letter-spacing: .1em; }
+.about-eyebrow { font-size: t.$font-size-mobile-caption; letter-spacing: t.$letter-spacing-label; }
 .about-intro {
   padding-block: clamp(48px, 7vw, 100px) 72px;
   h1 { font-size: clamp(40px, 6vw, 88px); line-height: 1.35; margin: 28px 0 40px; letter-spacing: -.02em; }
   em { color: t.$accent; font-style: normal; }
-  &__body { max-width: 660px; margin-left: auto; font-size: 17px; }
+  &__body { max-width: 660px; margin-left: auto; font-size: t.$font-size-lead; }
 }
-.about-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.about-actions { display: flex; flex-wrap: wrap; gap: t.$space-3; margin-top: t.$space-7; }
 .about-section {
-  border-top: 1px solid t.$line;
-  padding-block: 52px 64px;
-  h2 { font-size: clamp(26px, 3vw, 40px); line-height: 1.5; margin: 14px 0 32px; }
+  border-top: t.$border-width solid t.$line;
+  padding-block: 52px t.$space-16;
+  h2 { font-size: clamp(26px, 3vw, t.$font-size-display-md); line-height: 1.5; margin: 14px 0 t.$space-8; }
 }
-.about-pages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.about-pages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: t.$space-6; }
 .about-card {
-  padding: 28px;
-  border: 1px solid t.$line;
-  background: #11140f;
+  padding: t.$space-7;
+  border: t.$border-width solid t.$line;
+  background: t.$color-dark-surface;
   display: flex;
   flex-direction: column;
-  h3 { margin: 8px 0 14px; font-size: 28px; }
-  p { margin: 0 0 16px; }
+  h3 { margin: t.$space-2 0 14px; font-size: t.$font-size-brand; }
+  p { margin: 0 0 t.$space-4; }
   a { align-self: flex-start; margin-top: auto; min-height: 44px; display: flex; align-items: center; }
 }
 .about-steps {
   list-style: none; counter-reset: steps; padding: 0; margin: 0;
-  li { counter-increment: steps; position: relative; padding: 24px 0 24px 76px; border-top: 1px solid t.$line; }
-  li::before { content: "0" counter(steps); position: absolute; left: 0; top: 26px; color: t.$accent; font: 28px/1.4 Georgia, serif; }
+  li { counter-increment: steps; position: relative; padding: t.$space-6 0 t.$space-6 76px; border-top: t.$border-width solid t.$line; }
+  li::before { content: "0" counter(steps); position: absolute; left: 0; top: 26px; color: t.$accent; font-size: t.$font-size-brand; line-height: 1.4; font-family: Georgia, serif; }
   h3 { font-size: 22px; margin: 0 0 10px; }
   p { margin: 0; max-width: 760px; }
 }
-.about-tip { border-left: 2px solid t.$accent; padding-left: 20px; margin-top: 28px; }
-.about-origin { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-@media (max-width: 900px) { .about-pages { grid-template-columns: 1fr; } .about-origin { grid-template-columns: 1fr; gap: 0; } }
-@media (max-width: 760px) {
+.about-tip { border-left: t.$border-width-focus solid t.$accent; padding-left: t.$space-5; margin-top: t.$space-7; }
+.about-origin { display: grid; grid-template-columns: 1fr 1fr; gap: t.$space-12; }
+@media (max-width: t.$breakpoint-lg-max) { .about-pages { grid-template-columns: 1fr; } .about-origin { grid-template-columns: 1fr; gap: 0; } }
+@media (max-width: t.$breakpoint-md-max) {
   .about-page { font-size: 16px; }
-  .about-page .lib-button { font-size: 14px; }
+  .about-page .lib-button { font-size: t.$font-size-mobile-caption; }
   .about-intro { padding-bottom: 44px; }
   .about-intro__body { font-size: 16px; }
-  .about-section { padding-block: 32px 40px; }
+  .about-section { padding-block: t.$space-8 t.$space-10; }
   .about-card { padding: 22px; }
   .about-steps li { padding-left: 52px; }
 }

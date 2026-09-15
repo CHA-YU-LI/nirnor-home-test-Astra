@@ -66,7 +66,7 @@
 .about-card {
   padding: 28px;
   border: 1px solid rgba(255, 255, 255, 0.1254901961);
-  background: #11140f;
+  background: #11130f;
   display: flex;
   flex-direction: column;
 }
@@ -103,7 +103,9 @@
   left: 0;
   top: 26px;
   color: #dcf99a;
-  font: 28px/1.4 Georgia, serif;
+  font-size: 28px;
+  line-height: 1.4;
+  font-family: Georgia, serif;
 }
 .about-steps h3 {
   font-size: 22px;
@@ -126,7 +128,7 @@
   gap: 48px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 991.98px) {
   .about-pages {
     grid-template-columns: 1fr;
   }
@@ -135,7 +137,7 @@
     gap: 0;
   }
 }
-@media (max-width: 760px) {
+@media (max-width: 767.98px) {
   .about-page {
     font-size: 16px;
   }

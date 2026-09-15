@@ -3,8 +3,8 @@
   color-scheme: dark;
   --bg: #0a0a0a;
   --ink: #f0efe9;
-  --muted: #989b95;
-  --line: #ffffff17;
+  --muted: #a1a79a;
+  --line: rgba(255, 255, 255, 0.1254901961);
   --accent: #dcf99a;
   --gutter: clamp(24px, 4.2vw, 80px);
 }
@@ -542,12 +542,12 @@ dialog .cta {
   margin-top: 8px;
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 1400px) {
   .hero-copy {
     margin-left: 3vw;
   }
 }
-@media (max-width: 1050px) {
+@media (max-width: 991.98px) {
   .bottom {
     grid-template-columns: 1fr;
   }
@@ -575,7 +575,7 @@ dialog .cta {
     font-size: 11vw;
   }
 }
-@media (max-width: 760px) {
+@media (max-width: 767.98px) {
   .page {
     min-height: max(820px, 100svh);
   }
@@ -705,7 +705,7 @@ dialog .cta {
     top: 52px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 575.98px) {
   .description {
     max-width: 125px;
   }
@@ -720,7 +720,7 @@ dialog .cta {
     transition: none !important;
   }
 }
-@media (max-width: 760px) {
+@media (max-width: 767.98px) {
   .brand-note, .eyebrow, .nav, .nav a, .nav button, .micro,
   .material-switch, .material-switch button, .motion-button,
   .hero-kicker, .hero-caption, .description, .cta, .status,
@@ -981,7 +981,7 @@ dialog .cta {
   min-height: 72px;
 }
 
-@media (min-width: 761px) {
+@media (min-width: 768.98px) {
   .brand-note, .eyebrow, .nav, .micro, .material-switch, .motion-button,
   .hero-kicker, .hero-caption, .description, .cta, .motion-icon,
   .footer .micro, .status, dialog p,
@@ -990,7 +990,7 @@ dialog .cta {
     font-size: 16px;
   }
 }
-@media (max-width: 1050px) {
+@media (max-width: 991.98px) {
   .experiment-layout {
     gap: 30px;
   }
@@ -1001,7 +1001,7 @@ dialog .cta {
     margin-left: 0;
   }
 }
-@media (max-width: 760px) {
+@media (max-width: 767.98px) {
   .explore-bar {
     gap: 12px;
   }
