@@ -14,7 +14,11 @@ function render(){
     preview.dataset.preview=item.slug;
     const img=make('img');img.src=`assets/previews/${item.slug}.svg`;img.alt=item.name+'效果示意';img.loading='lazy';img.width=640;img.height=400;
     const caption=make('span',previewCaption(item.slug),'lib-preview-caption');
-    preview.append(img,make('span',item.id,'lib-preview-id'),caption,make('b','↗'));
+    const arrow=make('b');arrow.setAttribute('aria-hidden','true');
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    for(const [name,value] of Object.entries({width:'1em',height:'1em',viewBox:'0 0 24 24',fill:'none',stroke:'currentColor','stroke-width':'1.5',focusable:'false'}))svg.setAttribute(name,value);
+    const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d','M6 18 18 6M6 6h12v12');svg.append(path);arrow.append(svg);
+    preview.append(img,make('span',item.id,'lib-preview-id'),caption,arrow);
     const body=make('div',null,'lib-card-body');body.append(make('div',item.category,'lib-kicker'));const h=make('h2'),link=make('a',item.name);link.href=preview.href;h.append(link);body.append(h,make('p',item.summary));const tags=make('div',null,'lib-tags');[...item.packages,...item.apis.slice(0,2)].forEach(t=>tags.append(make('span',t,'lib-tag')));body.append(tags,make('small','原站證據已記錄 · 可操作 demo'));card.append(preview,body);return card;
   }));document.querySelector('#result-count').textContent=`${String(result.length).padStart(2,'0')} / ${catalog.length} 個效果`;document.querySelector('#empty-state').hidden=result.length!==0;
   previews.refresh();

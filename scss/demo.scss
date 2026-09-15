@@ -6,3 +6,23 @@
  .fx-action{border:t.$border-width solid t.$color-action-border;background:t.$color-action-bg;padding:t.$space-2 t.$space-3;color:t.$color-action-ink;font-size:t.$font-size-body;min-height:40px;cursor:pointer;}.fx-note {position:absolute;bottom:18px;left:22px;right:22px;font-size:t.$font-size-body;line-height:1.6;font-family:t.$font-mono-system;pointer-events:none;display:flex;justify-content:space-between;gap:t.$space-3;z-index:t.$z-effect;}.fx-caption{font-size:t.$font-size-caption;letter-spacing:.08em;text-transform:uppercase;}.fx-scroller{height:100%;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:t.$color-scrollbar-thumb t.$color-light-bg;}.fx-top-action{position:absolute;right:t.$space-5;top:t.$space-5;z-index:t.$z-control;}.fx-render-status{position:absolute;bottom:t.$space-5;left:t.$space-6;font-size:t.$font-size-body;font-family:t.$font-mono-system;pointer-events:none;z-index:t.$z-effect;}
 @media(max-width:t.$breakpoint-lg-max){.demo-workbench{grid-template-columns:minmax(0,1fr) 240px}.demo-controls{padding:t.$space-6 t.$space-4}.demo-stage{height:600px}}
 @media(max-width:t.$breakpoint-md-max){.demo-head{display:block;padding-top:t.$space-7}.demo-head h1{font-size:28px}.demo-head p{font-size:t.$font-size-body}.demo-head .demo-status{margin-top:t.$space-5}.demo-workbench{grid-template-columns:1fr}.demo-controls{border-left:0;border-top:t.$border-width solid t.$line;display:grid;grid-template-columns:1fr 1fr;gap:t.$space-3;padding:22px 18px}.demo-controls h2,.demo-mode{grid-column:1/-1;margin:0}.demo-control{margin:0}.demo-mode{margin-top:t.$space-3}.demo-info{grid-template-columns:1fr;gap:t.$space-7}.demo-stage{height:570px}.demo-toolbar{padding:t.$space-3;gap:t.$space-2}.demo-toolbar .lib-button{padding:10px;font-size:t.$font-size-body}.demo-info pre{font-size:t.$font-size-body}.demo-head .demo-status{display:block}}
+.demo-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: t.$space-3;
+  margin-block: t.$space-4 t.$space-6;
+}
+.demo-info a.lib-button {
+  color: t.$ink;
+  text-decoration: none;
+  overflow-wrap: normal;
+  &:hover { color: t.$accent; }
+  &:focus-visible {
+    outline: t.$border-width-focus solid t.$accent;
+    outline-offset: t.$space-1;
+  }
+  &.lib-button--accent {
+    color: t.$bg;
+    &:hover { color: t.$bg; }
+  }
+}

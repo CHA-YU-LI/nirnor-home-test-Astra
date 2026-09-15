@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>消息列高度展開</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./demos/topics-accordion/effect.css" />
+  </head>
+  <body>
+    <main>
+      <h1>消息列高度展開</h1>
+      <p>點擊消息列，內文沿高度展開；指示箭頭同步改變方向。</p>
+      <section class="fx-topics-accordion" data-effect-root aria-label="消息列高度展開展示">
+        <h2>Topics</h2>
+        <div class="fx-topic-row">
+          <button data-topic aria-expanded="false" aria-controls="topic-panel">
+            <small>STUDY / 01</small><span>關於細微動作的觀察紀錄</span><i aria-hidden="true">↓</i>
+          </button>
+          <div class="fx-topic-panel" id="topic-panel" data-topic-panel data-open="false">
+            <div>
+              <p>
+                形體逐步展開，文字慢慢顯現。這是一則為展示高度動畫而撰寫的短文，點擊標題即可再次收合。
+              </p>
+              <div class="fx-topic-art" role="img" aria-label="自製斜紋幾何圖形"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <p class="package-status" role="status">可操作範例</p>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>點陣立方體膨脹循環</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./demos/lattice-pulse/effect.css" />
+  </head>
+  <body>
+    <main>
+      <h1>點陣立方體膨脹循環</h1>
+      <p>規則三維點陣緩慢旋轉，每隔一段時間在緊密與巨大尺度間切換。</p>
+      <section class="fx-lattice-pulse" data-effect-root aria-label="點陣立方體膨脹循環展示">
+        <canvas aria-hidden="true"></canvas>
+        <h2>A QUIETER WORLD.<br />A DIFFERENT PERSPECTIVE.</h2>
+        <button class="fx-action fx-top-action" data-expand>切換密度</button
+        ><span class="fx-render-status" data-render-status>正在建立畫面…</span>
+      </section>
+      <p class="package-status" role="status">可操作範例</p>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

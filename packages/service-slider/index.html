@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>服務手風琴與直向媒體帶</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./demos/service-slider/effect.css" />
+  </head>
+  <body>
+    <main>
+      <h1>服務手風琴與直向媒體帶</h1>
+      <p>選擇服務後展開說明，左側媒體垂直滑到對應項目並調整位置。</p>
+      <section class="fx-service-slider" data-effect-root aria-label="服務手風琴與直向媒體帶展示">
+        <div class="fx-service-layout">
+          <div>
+            <div class="fx-media-window" data-media>
+              <div class="fx-media-track" data-track>
+                <div class="fx-service-video" data-art="0">
+                  <video
+                    src="./assets/motion-study.webm"
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="自製幾何短片 1"
+                  ></video
+                  ><span class="fx-caption">STUDY / 01</span>
+                </div>
+                <div class="fx-service-video" data-art="1">
+                  <video
+                    src="./assets/motion-study.webm"
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="自製幾何短片 2"
+                  ></video
+                  ><span class="fx-caption">STUDY / 02</span>
+                </div>
+                <div class="fx-service-video" data-art="2">
+                  <video
+                    src="./assets/motion-study.webm"
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="自製幾何短片 3"
+                  ></video
+                  ><span class="fx-caption">STUDY / 03</span>
+                </div>
+                <div class="fx-service-video" data-art="3">
+                  <video
+                    src="./assets/motion-study.webm"
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="自製幾何短片 4"
+                  ></video
+                  ><span class="fx-caption">STUDY / 04</span>
+                </div>
+                <div class="fx-service-video" data-art="4">
+                  <video
+                    src="./assets/motion-study.webm"
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="自製幾何短片 5"
+                  ></video
+                  ><span class="fx-caption">STUDY / 05</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <section class="fx-service-row">
+              <button data-service aria-expanded="true" aria-controls="service-panel-0">
+                <span>01.</span>ART DIRECTION
+              </button>
+              <div class="fx-service-panel" id="service-panel-0" data-panel data-open="true">
+                <div><p>從畫面、構圖與文字出發，觀察形體的每個面向。</p></div>
+              </div>
+            </section>
+            <section class="fx-service-row">
+              <button data-service aria-expanded="false" aria-controls="service-panel-1">
+                <span>02.</span>WEB DESIGN
+              </button>
+              <div class="fx-service-panel" id="service-panel-1" data-panel data-open="false">
+                <div><p>讓資訊與操作，自然形成清晰的瀏覽節奏。</p></div>
+              </div>
+            </section>
+            <section class="fx-service-row">
+              <button data-service aria-expanded="false" aria-controls="service-panel-2">
+                <span>03.</span>WEB DEVELOPMENT
+              </button>
+              <div class="fx-service-panel" id="service-panel-2" data-panel data-open="false">
+                <div><p>將構想化為可操作、可調整的互動細節。</p></div>
+              </div>
+            </section>
+            <section class="fx-service-row">
+              <button data-service aria-expanded="false" aria-controls="service-panel-3">
+                <span>04.</span>GRAPHIC DESIGN
+              </button>
+              <div class="fx-service-panel" id="service-panel-3" data-panel data-open="false">
+                <div><p>嘗試平面、色彩與材質之間的不同組合。</p></div>
+              </div>
+            </section>
+            <section class="fx-service-row">
+              <button data-service aria-expanded="false" aria-controls="service-panel-4">
+                <span>05.</span>MOVIE DIRECTION
+              </button>
+              <div class="fx-service-panel" id="service-panel-4" data-panel data-open="false">
+                <div><p>以連續影格，留下一段可以反覆觀看的時間。</p></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+      <p class="package-status" role="status">可操作範例</p>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

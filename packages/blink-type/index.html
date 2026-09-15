@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>隨機閃爍文字與 Logo</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./demos/blink-type/effect.css" />
+  </head>
+  <body>
+    <main>
+      <h1>隨機閃爍文字與 Logo</h1>
+      <p>字元以不規則延遲閃現，再穩定成為完整段落。</p>
+      <section class="fx-blink-type" data-effect-root aria-label="隨機閃爍文字與 Logo展示">
+        <div class="fx-scroller" data-scroller tabindex="0" role="region" aria-label="可捲動展示區">
+          <div class="fx-type-copy">
+            <div class="fx-wordmark" data-blink>form.</div>
+            <h2 data-blink>eloquent<br />silence.</h2>
+            <!-- prettier-ignore -->
+            <p data-blink>在細微的變化裡，
+找到新的觀看方式。</p>
+            <p class="fx-caption" data-blink>SCROLL TO MEET THE TEAM ↓</p>
+          </div>
+          <div class="fx-member">
+            <span data-blink data-row="0">視覺探索 / Visual</span
+            ><span data-blink data-row="0">STUDIO 01</span>
+          </div>
+          <div class="fx-member">
+            <span data-blink data-row="1">互動實驗 / Interactive</span
+            ><span data-blink data-row="1">STUDIO 02</span>
+          </div>
+          <div class="fx-member">
+            <span data-blink data-row="2">動態研究 / Motion</span
+            ><span data-blink data-row="2">STUDIO 03</span>
+          </div>
+          <div class="fx-type-end"></div>
+        </div>
+      </section>
+      <p class="package-status" role="status">可操作範例</p>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

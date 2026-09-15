@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>全螢幕選單與雙線叉號</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./demos/mobile-menu/effect.css" />
+  </head>
+  <body>
+    <main>
+      <h1>全螢幕選單與雙線叉號</h1>
+      <p>灰底選單覆蓋畫面，雙線旋轉為叉號，導覽字元錯落閃現。</p>
+      <section class="fx-mobile-menu" data-effect-root aria-label="全螢幕選單與雙線叉號展示">
+        <div class="fx-menu-header">
+          <span class="fx-menu-mark">form.</span
+          ><button
+            class="fx-menu-toggle"
+            data-menu-open
+            aria-label="開啟導覽選單"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+          >
+            <span></span><span></span>
+          </button>
+        </div>
+        <p class="fx-menu-title" data-menu-current>Explore<br />the quiet.</p>
+        <dialog class="fx-menu-dialog" aria-label="展示導覽">
+          <div class="fx-menu-header">
+            <span class="fx-menu-mark">form.</span
+            ><button class="fx-menu-toggle" data-menu-close aria-label="關閉導覽選單">
+              <span></span><span></span>
+            </button>
+          </div>
+          <nav aria-label="展示頁面">
+            <a href="#home" data-menu-page="首頁"><span data-menu-text>HOME</span></a
+            ><a href="#works" data-menu-page="作品"><span data-menu-text>WORKS</span></a
+            ><a href="#about-us" data-menu-page="關於"><span data-menu-text>ABOUT US</span></a
+            ><a href="#contact" data-menu-page="聯絡"><span data-menu-text>CONTACT</span></a>
+          </nav>
+          <p data-menu-text>獨立動態研究<br />FORM / MOTION STUDIES<br />觀察細節，探索可能。</p>
+        </dialog>
+      </section>
+      <p class="package-status" role="status">可操作範例</p>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+@use '../../scss/tokens' as t;
+@use '../../scss/cube';
+.fx-unfold-cube {
+  @include t.effect;
+  @include cube.structure;
+  height: var(--effect-height, 640px);
+  min-height: 400px;
+  background: transparent;
+  color: #20211e;
+  --size: 110px;
+  .fx-scroller {
+    perspective: 1500px;
+  }
+  .fx-unfold-space {
+    height: 45%;
+    min-height: 200px;
+    padding: 60px 8% 0;
+    font-size: 13px;
+  }
+  .fx-net-anchor {
+    position: relative;
+    height: calc(var(--size) * 4.7);
+    perspective: 1500px;
+    margin-top: 70px;
+  }
+  .fx-net {
+    position: absolute;
+    left: calc(50% - var(--size) / 2);
+    top: calc(var(--size) * 1.1);
+    width: var(--size);
+    height: var(--size);
+    transform-style: preserve-3d;
+  }
+  .fx-net-node {
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    transform-style: preserve-3d;
+  }
+  .fx-hinge {
+    position: absolute;
+    width: 0;
+    height: 0;
+    transform-style: preserve-3d;
+    --fold: 90deg;
+  }
+  .fx-hinge--top {
+    top: 0;
+    left: 0;
+    transform: rotateX(var(--fold));
+    > .fx-net-node {
+      transform: translateY(-100%);
+    }
+  }
+  .fx-hinge--bottom {
+    top: var(--size);
+    left: 0;
+    transform: rotateX(calc(-1 * var(--fold)));
+  }
+  .fx-hinge--left {
+    top: 0;
+    left: 0;
+    transform: rotateY(calc(-1 * var(--fold)));
+    > .fx-net-node {
+      transform: translateX(-100%);
+    }
+  }
+  .fx-hinge--right {
+    top: 0;
+    left: var(--size);
+    transform: rotateY(var(--fold));
+  }
+  .fx-unfold-end {
+    height: 200px;
+    padding: 40px 8%;
+    font-size: 12px;
+  }
+  .fx-threshold {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    border-top: 1px dashed #71844d44;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .fx-threshold span {
+    position: absolute;
+    right: 15px;
+    font: 10px monospace;
+    color: #65724e;
+  }
+}

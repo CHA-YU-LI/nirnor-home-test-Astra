@@ -1,0 +1,28 @@
+@use './scss/tokens' as t;
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: t.$bg;
+  color: t.$ink;
+  font-family: t.$font-sans;
+  font-size: t.$font-size-body;
+  line-height: t.$line-height-body;
+}
+main {
+  width: min(1100px, calc(100% - #{t.$space-8}));
+  margin: auto;
+  padding-block: t.$space-8;
+}
+h1 {
+  font-size: t.$font-size-display-md;
+  font-weight: t.$font-weight-regular;
+}
+p {
+  color: t.$muted;
+}
+.package-status {
+  color: t.$accent;
+  margin-top: t.$space-4;
+}

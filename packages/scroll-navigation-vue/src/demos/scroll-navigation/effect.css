@@ -1,0 +1,181 @@
+.fx-scroll-navigation {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-width: 0;
+  font-family: Arial, 'Microsoft JhengHei', sans-serif;
+  line-height: 1.6;
+}
+.fx-scroll-navigation,
+.fx-scroll-navigation * {
+  box-sizing: border-box;
+}
+.fx-scroll-navigation button,
+.fx-scroll-navigation input,
+.fx-scroll-navigation select,
+.fx-scroll-navigation textarea {
+  font: inherit;
+}
+.fx-scroll-navigation button,
+.fx-scroll-navigation a {
+  -webkit-tap-highlight-color: transparent;
+}
+.fx-scroll-navigation button {
+  cursor: pointer;
+}
+.fx-scroll-navigation :focus-visible {
+  outline: 2px solid #6c8138;
+  outline-offset: 4px;
+}
+.fx-scroll-navigation [hidden] {
+  display: none !important;
+}
+.fx-scroll-navigation .fx-scroller {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #929984 #f7f7f2;
+}
+.fx-scroll-navigation .fx-action {
+  border: 1px solid rgba(26, 26, 26, 0.3137254902);
+  background: rgba(246, 246, 239, 0.8666666667);
+  padding: 8px 12px;
+  color: #20251b;
+  font-size: 16px;
+  min-height: 40px;
+  cursor: pointer;
+}
+.fx-scroll-navigation .fx-top-action {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 5;
+}
+.fx-scroll-navigation .fx-caption {
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.fx-scroll-navigation .fx-render-status {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  font-size: 16px;
+  font-family: monospace;
+  pointer-events: none;
+  z-index: 3;
+}
+.fx-scroll-navigation {
+  height: var(--effect-height, 640px);
+  color: #242821;
+  background: #f7f7f2;
+}
+.fx-scroll-navigation .fx-scroll-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: -75px;
+  padding: 0 6%;
+  font: 12px monospace;
+  pointer-events: none;
+}
+.fx-scroll-navigation .fx-scroll-header[data-dark='true'] {
+  color: white;
+}
+.fx-scroll-navigation .fx-scroll-content {
+  position: relative;
+}
+.fx-scroll-navigation .fx-scroll-layout {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+}
+.fx-scroll-navigation .fx-scroll-nav {
+  position: sticky;
+  top: 115px;
+  height: fit-content;
+  padding: 0 18px;
+  margin-top: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  z-index: 6;
+}
+.fx-scroll-navigation button {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #8c9384;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  min-height: 36px;
+  padding: 0;
+  cursor: pointer;
+}
+.fx-scroll-navigation button[aria-current='location'] {
+  font-size: 19px;
+  border-color: currentColor;
+  color: #566b34;
+}
+.fx-scroll-navigation section {
+  min-height: 650px;
+  padding: 140px 8% 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.fx-scroll-navigation section:nth-child(2) {
+  background: #3c3c3c;
+  color: #f3f3ec;
+}
+.fx-scroll-navigation section h2 {
+  font:
+    italic clamp(36px, 5vw, 65px) / 1.2 Georgia,
+    serif;
+  font-weight: 400;
+  margin: 0 0 30px;
+}
+.fx-scroll-navigation section p {
+  font-size: 14px;
+  max-width: 360px;
+  line-height: 2;
+}
+.fx-scroll-navigation .fx-scroll-art {
+  height: 220px;
+  margin-top: 40px;
+  background: repeating-linear-gradient(60deg, #adc08b 0 15px, #52634a 15px 30px);
+}
+.fx-scroll-navigation .fx-scroll-status {
+  font: 10px monospace;
+  padding: 20px;
+}
+@media (max-width: 767.98px) {
+  .fx-scroll-navigation .fx-scroll-layout {
+    grid-template-columns: 90px 1fr;
+  }
+  .fx-scroll-navigation .fx-scroll-nav {
+    padding: 0 12px;
+  }
+  .fx-scroll-navigation button {
+    font-size: 10px;
+  }
+  .fx-scroll-navigation button[aria-current='location'] {
+    font-size: 14px;
+  }
+  .fx-scroll-navigation section {
+    min-height: 700px;
+    padding-inline: 18px;
+  }
+  .fx-scroll-navigation section h2 {
+    font-size: 38px;
+  }
+  .fx-scroll-navigation section p {
+    font-size: 12px;
+  }
+}

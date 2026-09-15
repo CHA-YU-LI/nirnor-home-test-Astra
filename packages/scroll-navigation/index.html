@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>慣性捲動、黏附目錄與導覽換色</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./demos/scroll-navigation/effect.css" />
+  </head>
+  <body>
+    <main>
+      <h1>慣性捲動、黏附目錄與導覽換色</h1>
+      <p>平滑前往區段；目錄依位置改變大小與底線，深色區域切換導覽顏色。</p>
+      <section
+        class="fx-scroll-navigation"
+        data-effect-root
+        aria-label="慣性捲動、黏附目錄與導覽換色展示"
+      >
+        <div class="fx-scroller" data-scroller tabindex="0" role="region" aria-label="可捲動展示區">
+          <div data-scroll-content class="fx-scroll-content">
+            <div class="fx-scroll-header" data-scroll-header>
+              <span>form.</span><span>SCROLL / EXPLORE</span>
+            </div>
+            <div class="fx-scroll-layout">
+              <nav class="fx-scroll-nav" aria-label="展示內容目錄">
+                <button data-jump="0" aria-current="location">Outline</button
+                ><button data-jump="1" aria-current="false">Graphic</button
+                ><button data-jump="2" aria-current="false">Team</button>
+              </nav>
+              <div>
+                <section data-section>
+                  <span class="fx-caption">01 / OUTLINE</span>
+                  <h2>the outline.</h2>
+                  <p>
+                    慢速或快速捲動，左側目錄將跟隨目前的段落。點擊其他目錄可以前往指定位置，再向上捲動確認反向更新。
+                  </p>
+                  <div class="fx-scroll-art" aria-hidden="true"></div>
+                </section>
+                <section data-section>
+                  <span class="fx-caption">02 / GRAPHIC</span>
+                  <h2>a darker<br />perspective.</h2>
+                  <p>
+                    慢速或快速捲動，左側目錄將跟隨目前的段落。點擊其他目錄可以前往指定位置，再向上捲動確認反向更新。
+                  </p>
+                  <div class="fx-scroll-art" aria-hidden="true"></div>
+                </section>
+                <section data-section>
+                  <span class="fx-caption">03 / TEAM</span>
+                  <h2>a shared<br />direction.</h2>
+                  <p>
+                    慢速或快速捲動，左側目錄將跟隨目前的段落。點擊其他目錄可以前往指定位置，再向上捲動確認反向更新。
+                  </p>
+                  <div class="fx-scroll-art" aria-hidden="true"></div>
+                </section>
+              </div>
+            </div>
+            <div class="fx-scroll-status" data-scroll-status>正在準備捲動…</div>
+          </div>
+        </div>
+      </section>
+      <p class="package-status" role="status">可操作範例</p>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

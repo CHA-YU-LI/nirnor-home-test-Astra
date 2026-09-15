@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>聯絡表單選項與焦點回饋</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./demos/contact-controls/effect.css" />
+  </head>
+  <body>
+    <main>
+      <h1>聯絡表單選項與焦點回饋</h1>
+      <p>圓形勾選、底線輸入與原生驗證，保留鍵盤及觸控操作。</p>
+      <section class="fx-contact-controls" data-effect-root aria-label="聯絡表單選項與焦點回饋展示">
+        <h2>CONTACT</h2>
+        <form>
+          <fieldset>
+            <legend>想探索的方向（可複選）</legend>
+            <div class="fx-checks">
+              <label class="fx-check-label"
+                ><input type="checkbox" name="category" value="0" />網站設計</label
+              ><label class="fx-check-label"
+                ><input type="checkbox" name="category" value="1" />平面設計</label
+              ><label class="fx-check-label"
+                ><input type="checkbox" name="category" value="2" />互動開發</label
+              ><label class="fx-check-label"
+                ><input type="checkbox" name="category" value="3" />其他</label
+              >
+            </div>
+          </fieldset>
+          <label class="fx-field"
+            >名稱 *<input
+              name="name"
+              required
+              autocomplete="off"
+              placeholder="輸入展示用名稱" /></label
+          ><label class="fx-field"
+            >Email *<input
+              name="email"
+              type="email"
+              required
+              autocomplete="off"
+              placeholder="例如 demo@example.com" /></label
+          ><label class="fx-field"
+            >內容 *<textarea name="message" required placeholder="輸入展示用內容"></textarea></label
+          ><button type="submit">檢查欄位 →</button>
+          <p role="status" data-form-status></p>
+        </form>
+      </section>
+      <p class="package-status" role="status">可操作範例</p>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

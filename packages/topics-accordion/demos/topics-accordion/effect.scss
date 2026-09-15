@@ -1,0 +1,66 @@
+@use '../../scss/tokens' as t;
+.fx-topics-accordion {
+  @include t.effect;
+  height: var(--effect-height, 640px);
+  overflow: auto;
+  background: #f7f7f2;
+  color: #252820;
+  padding: 75px 8%;
+  h2 {
+    font-size: 32px;
+    font-weight: 400;
+    margin: 0 0 60px;
+  }
+  .fx-topic-row {
+    border-block: 1px solid #1a1a1a40;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    justify-content: space-between;
+    text-align: left;
+    border: 0;
+    background: none;
+    color: inherit;
+    padding: 24px 0;
+    width: 100%;
+    font-size: 15px;
+  }
+  button small {
+    font: 11px monospace;
+    color: #707765;
+  }
+  button i {
+    font-style: normal;
+  }
+  button[aria-expanded='true'] i {
+    transform: rotate(180deg);
+  }
+  .fx-topic-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--duration);
+    &[data-open='true'] {
+      grid-template-rows: 1fr;
+    }
+    > div {
+      overflow: hidden;
+    }
+    p {
+      margin: 8px 40px 30px 0;
+      font-size: 14px;
+      line-height: 2;
+    }
+    .fx-topic-art {
+      height: 150px;
+      background: repeating-linear-gradient(45deg, #849570 0 20px, #dce5bc 20px 40px);
+      margin-bottom: 28px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+    }
+  }
+}

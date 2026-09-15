@@ -443,6 +443,46 @@ input[type=search], select {
   gap: 24px;
 }
 
+.demo-doc-links {
+  border-top: 1px solid rgba(255, 255, 255, 0.1254901961);
+  margin-top: 24px;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  align-items: baseline;
+}
+
+.demo-doc-links h3 {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.demo-doc-links a {
+  color: #dcf99a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.demo-parameter-guide {
+  margin-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1254901961);
+  padding-top: 20px;
+  overflow-x: auto;
+}
+
+.demo-parameter-guide h3 {
+  margin-top: 0;
+}
+
+.demo-parameter-guide table {
+  min-width: 640px;
+}
+
+.demo-parameter-guide .demo-note {
+  color: #a1a79a;
+}
+
 .lib-audit {
   padding: 50px 0;
   max-width: 1100px;
@@ -913,4 +953,29 @@ td {
   .demo-head .demo-status {
     display: block;
   }
+}
+.demo-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-block: 16px 24px;
+}
+
+.demo-info a.lib-button {
+  color: #f0efe9;
+  text-decoration: none;
+  overflow-wrap: normal;
+}
+.demo-info a.lib-button:hover {
+  color: #dcf99a;
+}
+.demo-info a.lib-button:focus-visible {
+  outline: 2px solid #dcf99a;
+  outline-offset: 4px;
+}
+.demo-info a.lib-button.lib-button--accent {
+  color: #0a0a0a;
+}
+.demo-info a.lib-button.lib-button--accent:hover {
+  color: #0a0a0a;
 }

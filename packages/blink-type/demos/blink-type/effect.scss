@@ -1,0 +1,40 @@
+@use '../../scss/tokens' as t;
+.fx-blink-type {
+  @include t.effect;
+  height: var(--effect-height, 640px);
+  background: #f7f7f2;
+  color: #20211e;
+  .fx-type-copy {
+    padding: 70px 7% 20px;
+    min-height: 530px;
+  }
+  h2 {
+    font:
+      italic clamp(48px, 7vw, 88px) / 1.15 Georgia,
+      serif;
+    margin: 30px 0;
+  }
+  p {
+    white-space: pre-wrap;
+    max-width: 500px;
+  }
+  .fx-wordmark {
+    font:
+      bold 55px/1 Georgia,
+      serif;
+    letter-spacing: -3px;
+  }
+  .fx-member {
+    margin: 0 7%;
+    padding: 35px 0;
+    border-top: 1px solid #1a1a1a30;
+    min-height: 140px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    font-size: 16px;
+  }
+  .fx-type-end {
+    height: 120px;
+  }
+}

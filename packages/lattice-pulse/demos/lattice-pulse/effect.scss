@@ -1,0 +1,31 @@
+@use '../../scss/tokens' as t;
+.fx-lattice-pulse {
+  @include t.effect;
+  height: var(--effect-height, 640px);
+  background: #3c3c3c;
+  color: #eee;
+  overflow: hidden;
+  canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  h2 {
+    position: absolute;
+    top: 70px;
+    left: 8%;
+    margin: 0;
+    font:
+      26px/1.8 Georgia,
+      serif;
+    writing-mode: vertical-rl;
+    max-height: 450px;
+    pointer-events: none;
+  }
+  .fx-action {
+    background: #3c3c3cbb;
+    color: white;
+    border-color: #fff6;
+  }
+}

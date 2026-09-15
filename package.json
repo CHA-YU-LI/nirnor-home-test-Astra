@@ -8,7 +8,19 @@
     "build:css": "node scripts/sync-layout.mjs && sass scss:css demos:demos --no-source-map --style=expanded",
     "watch:css": "sass --watch scss:css demos:demos --no-source-map --style=expanded",
     "serve": "node scripts/serve.mjs",
-    "check": "node scripts/check.mjs"
+    "check": "node scripts/check.mjs",
+    "guides": "node scripts/generate-demo-guides.mjs",
+    "packages": "node scripts/build-demo-packages.mjs",
+    "postpackages": "npm run check:packages",
+    "check:packages": "node scripts/check-package-format.mjs && node scripts/check-vue-packages.mjs && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/check-package-zips.ps1"
   },
-  "devDependencies": { "sass": "1.97.3" }
+  "devDependencies": {
+    "@vitejs/plugin-vue": "6.0.9",
+    "lenis": "1.3.21",
+    "prettier": "3.6.2",
+    "sass": "1.97.3",
+    "three": "0.170.0",
+    "vite": "8.3.0",
+    "vue": "3.5.42"
+  }
 }
